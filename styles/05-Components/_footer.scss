@@ -1,0 +1,65 @@
+.footer {
+    border-top: 5px solid $border-grey;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px 0 70px;
+
+    &__description {
+        max-width: 40%;
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    &__list {
+        width: 60%;
+        justify-content: space-evenly;
+
+        a {
+            color: $primary-white;
+
+            &::before {
+                font-family: FontAwesome;
+                margin-right: 5px;
+                border-radius: 50%;
+                padding: 5px 10px;
+                color: white;
+                font-size: 1.8rem;
+                background-color: $border-grey;
+            }
+        }
+
+        .phone-contact {
+            &::before {
+                content: '\f879';
+            }
+        }
+
+        .facebook {
+            &::before {
+                content: '\f39e';
+            }
+        }
+
+        .instagram {
+            &::before {
+                content: '\f16d';
+            }
+        }
+
+        .mail {
+
+            margin-right: 0;
+            
+            &::before {
+                content: '\f0e0';
+            }
+        }
+    }
+
+}

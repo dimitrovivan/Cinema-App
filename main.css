@@ -469,4 +469,66 @@ p {
   background-color: #E50914;
   padding: 7px 17px;
 }
+
+.footer {
+  border-top: 5px solid #534d4d;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px 0 70px;
+}
+
+.footer__description {
+  max-width: 40%;
+}
+
+.footer__heading {
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.footer__list {
+  width: 60%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footer__list a {
+  color: #faf1f1;
+}
+
+.footer__list a::before {
+  font-family: FontAwesome;
+  margin-right: 5px;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: white;
+  font-size: 1.8rem;
+  background-color: #534d4d;
+}
+
+.footer__list .phone-contact::before {
+  content: '\f879';
+}
+
+.footer__list .facebook::before {
+  content: '\f39e';
+}
+
+.footer__list .instagram::before {
+  content: '\f16d';
+}
+
+.footer__list .mail {
+  margin-right: 0;
+}
+
+.footer__list .mail::before {
+  content: '\f0e0';
+}
 /*# sourceMappingURL=main.css.map */
