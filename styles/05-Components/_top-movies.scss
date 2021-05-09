@@ -1,0 +1,14 @@
+.top-movies-page {
+    margin: 70px 30px 0;
+
+    .cards-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        
+        & > * {
+            flex: 1;
+        }
+    }
+
+    
+}
