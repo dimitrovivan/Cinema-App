@@ -7,6 +7,10 @@
         margin-right: 4rem;
     }
 
+    &__list {
+        align-items: center;
+    }
+
     &__link {
         position: relative;
         color: $primary-white;
