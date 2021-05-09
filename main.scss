@@ -1,4 +1,5 @@
 @import './styles/01-Tools/colors';
+@import './styles/01-Tools/animations';
 
 @import './styles/02-Generics/normalizer';
 @import './styles/02-Generics/typography';
@@ -21,5 +22,7 @@
 @import './styles/05-Components/footer';
 @import './styles/05-Components/home';
 @import './styles/05-Components/about';
+@import './styles/05-Components/submit-form';
+@import './styles/05-Components/login';
 
 @import './styles/06-Utilities/centered';

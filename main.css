@@ -1,3 +1,27 @@
+@-webkit-keyframes booping {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(1%);
+            transform: translateX(1%);
+    color: #E50914;
+  }
+}
+
+@keyframes booping {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(1%);
+            transform: translateX(1%);
+    color: #E50914;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -415,11 +439,12 @@ p {
   color: #e2e2e2;
   border: none;
   border-radius: 3px;
+  display: inline-block;
 }
 
 .btn--primary {
   background-color: #E50914;
-  padding: 7px 17px;
+  padding: 10px 20px;
 }
 
 .btn--primary:hover {
@@ -439,6 +464,12 @@ p {
 
 .header__list-item {
   margin-right: 4rem;
+}
+
+.header__list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__link {
@@ -562,7 +593,6 @@ p {
 }
 
 .home-page__body .btn {
-  display: inline-block;
   margin: 20px 0 0;
   padding: 15px 30px;
   font-size: 1.7rem;
@@ -591,6 +621,62 @@ p {
   color: #E50914;
   font-size: 2.5rem;
   letter-spacing: 1px;
+}
+
+.submit-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.submit-form input {
+  width: 80%;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 3rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+.submit-form label {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.login-page {
+  max-width: 50%;
+  margin: 8rem auto 0;
+  padding: 2rem;
+  background-color: rgba(14, 13, 13, 0.8);
+  border-radius: 20px;
+}
+
+.login-page__header h1 {
+  margin-bottom: 5rem;
+}
+
+.login-page__footer {
+  margin-top: 5rem;
+}
+
+.login-page__footer span {
+  margin-right: 10px;
+  padding-right: 5px;
+  border-right: 1px solid #e2e2e2;
+}
+
+.login-page__footer a {
+  font-size: 1.6rem;
+  color: #e2e2e2;
+  -webkit-animation: booping 1.5s infinite alternate;
+          animation: booping 1.5s infinite alternate;
 }
 
 .text-centered {

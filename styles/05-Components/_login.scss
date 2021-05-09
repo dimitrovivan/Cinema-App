@@ -1,0 +1,30 @@
+.login-page {
+    max-width: 50%;
+    margin: 8rem auto 0;
+    padding: 2rem;
+    background-color: $black-900;
+    border-radius: 20px;
+
+    &__header {
+        
+        h1 {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__footer {
+        margin-top: 5rem;
+
+        span {
+            margin-right: 10px;
+            padding-right: 5px;
+            border-right: 1px solid $primary-white;
+        }
+
+        a {
+            font-size: 1.6rem;
+            color: $primary-white;            
+            animation: booping 1.5s infinite alternate;
+        }
+    }
+}

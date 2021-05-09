@@ -1,0 +1,10 @@
+@keyframes booping {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(1%);
+        color: $primary-red;
+    }
+}
