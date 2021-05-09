@@ -1,11 +1,13 @@
 .page-wrapper {
     position: relative;
+    z-index: -998;
     height: 100vh;
     background: url('/images/background-catalog.jpg');
 
     &::after {
         content: "";
         position: absolute;
+        z-index: -997;
         top: 0;
         left: 0;
         width: 100%;
