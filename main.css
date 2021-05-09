@@ -398,7 +398,33 @@ p {
 
 .root {
   height: inherit;
-  color: #faf1f1;
+  color: #e2e2e2;
+}
+
+.logo {
+  position: relative;
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #E50914;
+}
+
+.btn {
+  text-align: center;
+  color: #e2e2e2;
+  border: none;
+  border-radius: 3px;
+}
+
+.btn--primary {
+  background-color: #E50914;
+  padding: 7px 17px;
+}
+
+.btn--primary:hover {
+  -webkit-box-shadow: 0px 3px 10px 2px black;
+          box-shadow: 0px 3px 10px 2px black;
 }
 
 .header {
@@ -417,7 +443,7 @@ p {
 
 .header__link {
   position: relative;
-  color: #faf1f1;
+  color: #e2e2e2;
   font-size: 1.6rem;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
@@ -450,32 +476,6 @@ p {
   margin-left: 1rem;
 }
 
-.logo {
-  position: relative;
-  font-size: 5rem;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #E50914;
-}
-
-.btn {
-  text-align: center;
-  color: #faf1f1;
-  border: none;
-  border-radius: 3px;
-}
-
-.btn--primary {
-  background-color: #E50914;
-  padding: 7px 17px;
-}
-
-.btn--primary:hover {
-  -webkit-box-shadow: 0px 3px 10px 2px black;
-          box-shadow: 0px 3px 10px 2px black;
-}
-
 .footer {
   border-top: 5px solid #534d4d;
   -webkit-box-align: center;
@@ -505,7 +505,7 @@ p {
 }
 
 .footer__list a {
-  color: #faf1f1;
+  color: #e2e2e2;
 }
 
 .footer__list a::before {
@@ -566,6 +566,31 @@ p {
   margin: 20px 0 0;
   padding: 15px 30px;
   font-size: 1.7rem;
+}
+
+.about-page {
+  max-width: 70%;
+  margin: 8rem auto;
+}
+
+.about-page__header h1 {
+  font-size: 4.7rem;
+  margin-bottom: 4rem;
+  letter-spacing: 1.5px;
+}
+
+.about-page__description h2 {
+  margin-bottom: 2rem;
+}
+
+.about-page__description h3 {
+  margin-bottom: 1.5rem;
+}
+
+.about-page__description .all-emphasize {
+  color: #E50914;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
 }
 
 .text-centered {
