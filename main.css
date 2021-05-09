@@ -460,6 +460,7 @@ p {
 }
 
 .btn {
+  text-align: center;
   color: #faf1f1;
   border: none;
   border-radius: 3px;
@@ -468,6 +469,11 @@ p {
 .btn--primary {
   background-color: #E50914;
   padding: 7px 17px;
+}
+
+.btn--primary:hover {
+  -webkit-box-shadow: 0px 3px 10px 2px black;
+          box-shadow: 0px 3px 10px 2px black;
 }
 
 .footer {
@@ -530,5 +536,43 @@ p {
 
 .footer__list .mail::before {
   content: '\f0e0';
+}
+
+.home-page {
+  max-width: 70%;
+  margin: 10rem auto;
+}
+
+.home-page__header {
+  margin-bottom: 2rem;
+}
+
+.home-page__header h1 {
+  font-size: 5rem;
+}
+
+.home-page__body .check-out-section {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-page__body h2 {
+  margin-bottom: 2rem;
+}
+
+.home-page__body .btn {
+  display: inline-block;
+  margin: 20px 0 0;
+  padding: 15px 30px;
+  font-size: 1.7rem;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.block-centered {
+  margin: 0 auto;
 }
 /*# sourceMappingURL=main.css.map */

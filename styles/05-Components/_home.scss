@@ -1,0 +1,30 @@
+.home-page {
+    max-width: 70%;
+    margin: 10rem auto;
+
+    &__header {
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 5rem;
+        }
+    }
+
+    &__body {
+
+        .check-out-section {
+            align-items: center;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 20px 0 0;
+            padding: 15px 30px;
+            font-size: 1.7rem;
+        }
+    }
+}

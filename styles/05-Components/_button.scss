@@ -1,4 +1,5 @@
 .btn {
+    text-align: center;
     color: $primary-white;
     border:none;
     border-radius: 3px;
@@ -7,4 +8,8 @@
 .btn--primary {
     background-color: $primary-red;
     padding: 7px 17px;
+
+    &:hover {
+        box-shadow: 0px 3px 10px 2px black;
+    }
 }
