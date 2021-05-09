@@ -679,6 +679,35 @@ p {
           animation: booping 1.5s infinite alternate;
 }
 
+.register-page {
+  max-width: 50%;
+  margin: 5rem auto 0;
+  padding: 2rem;
+  background-color: rgba(14, 13, 13, 0.8);
+  border-radius: 20px;
+}
+
+.register-page__header h1 {
+  margin-bottom: 5rem;
+}
+
+.register-page__footer {
+  margin-top: 5rem;
+}
+
+.register-page__footer span {
+  margin-right: 10px;
+  padding-right: 5px;
+  border-right: 1px solid #e2e2e2;
+}
+
+.register-page__footer a {
+  font-size: 1.6rem;
+  color: #e2e2e2;
+  -webkit-animation: booping 1.5s infinite alternate;
+          animation: booping 1.5s infinite alternate;
+}
+
 .text-centered {
   text-align: center;
 }
