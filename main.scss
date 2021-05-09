@@ -1,3 +1,5 @@
+@import './styles/01-Tools/colors';
+
 @import './styles/02-Generics/normalizer';
 @import './styles/02-Generics/typography';
 
@@ -7,3 +9,5 @@
 @import './styles/03-Elements/links';
 @import './styles/03-Elements/lists';
 @import './styles/03-Elements/paragraphs';
+
+@import './styles/05-Components/page-wrapper'
