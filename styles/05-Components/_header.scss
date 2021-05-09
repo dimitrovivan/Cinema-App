@@ -1,0 +1,40 @@
+.header {
+    padding: 20px 50px 0 70px;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list-item {
+        margin-right: 4rem;
+    }
+
+    &__link {
+        position: relative;
+        color: $primary-white;
+        font-size: 1.6rem;
+        transition: all .5s ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 23px;
+            background-color: $primary-red;
+            width: 100%;
+            height: 2.5px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 200ms ease-in-out;
+        }
+
+        &:hover {
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    &__btn {
+        margin-left: 1rem;
+    }
+}

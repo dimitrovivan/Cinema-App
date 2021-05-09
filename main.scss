@@ -3,6 +3,7 @@
 @import './styles/02-Generics/normalizer';
 @import './styles/02-Generics/typography';
 
+@import './styles/03-Elements/body';
 @import './styles/03-Elements/buttons';
 @import './styles/03-Elements/headings';
 @import './styles/03-Elements/images';
@@ -10,4 +11,10 @@
 @import './styles/03-Elements/lists';
 @import './styles/03-Elements/paragraphs';
 
-@import './styles/05-Components/page-wrapper'
+@import './styles/04-Objects/flex';
+
+@import './styles/05-Components/page-wrapper';
+@import './styles/05-Components/root';
+@import './styles/05-Components/header';
+@import './styles/05-Components/logo';
+@import './styles/05-Components/button';
