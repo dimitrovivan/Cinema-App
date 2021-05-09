@@ -434,6 +434,10 @@ p {
   color: #E50914;
 }
 
+.logo:hover {
+  cursor: pointer;
+}
+
 .btn {
   text-align: center;
   color: #e2e2e2;

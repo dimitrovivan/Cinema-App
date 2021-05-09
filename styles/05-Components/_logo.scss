@@ -5,4 +5,8 @@
     font-weight: 700;
     letter-spacing: 2px;
     color: $primary-red;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
