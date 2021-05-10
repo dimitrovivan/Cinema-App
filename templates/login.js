@@ -1,6 +1,7 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import headerTemplate from './partials/header.js';
 import footerTemplate from './partials/footer.js';
+import { login } from '../scripts/userServices.js';
 
 export default () => html`
 ${headerTemplate()}
@@ -9,13 +10,13 @@ ${headerTemplate()}
                     <h1>Sign in</h1>
                 </div>
                 <div class="login-page__body">
-                   <div class="submit-form">
+                   <div class="submit-form loginForm">
                        <label for="email">Email:</label>
                        <input type="email" id="email" class="login-email"/>
 
                        <label for="password">Password:</label>
                        <input type="password" id="password" class="login-password"/>
-                       <a href="/" class="btn btn--primary">Sign in</a>
+                       <a href="/" class="btn btn--primary" @click=${login}>Sign in</a>
                    </div>
                 </div>
                 <div class="login-page__footer">

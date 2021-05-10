@@ -1,7 +1,8 @@
 import { navigate } from "./router.js";
 
 const endpoints = {
-    register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`
+    register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
+    login: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`
 }
 
 const request = {
@@ -87,4 +88,22 @@ export async function register() {
     if(!response.ok) return;
 
     navigate('/login');
+}
+
+export async function login() {
+
+    let loginForm = document.querySelector('.loginForm');
+
+    let { email, password } = getInputDataFromForm(loginForm);
+
+    // TODO: Show notif
+
+    if(!validateCredentials.login(email, password)) return;
+
+    let response = await request.post(endpoints.login, {email, password});
+
+    if(!response.ok) return;
+
+    navigate('/');
+
 }
