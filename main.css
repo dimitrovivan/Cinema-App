@@ -579,7 +579,7 @@ p {
 }
 
 .home-page__header {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .home-page__header h1 {
@@ -597,7 +597,7 @@ p {
 }
 
 .home-page__body .btn {
-  margin: 20px 0 0;
+  margin: 50px 0 0;
   padding: 15px 30px;
   font-size: 1.7rem;
 }
@@ -609,16 +609,23 @@ p {
 
 .about-page__header h1 {
   font-size: 4.7rem;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   letter-spacing: 1.5px;
 }
 
 .about-page__description h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  line-height: 4rem;
 }
 
 .about-page__description h3 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 3.5rem;
+}
+
+.about-page__description h5 {
+  letter-spacing: 1.5px;
+  line-height: 2.5rem;
 }
 
 .about-page__description .all-emphasize {
