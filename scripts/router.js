@@ -3,37 +3,92 @@ import { rootRender } from "./templateServices.js";
 const route = [
     {
         regexPath: /^\/$/,
-        execute: () => rootRender('home')
+        execute: () => {
+            
+            let context = {};
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+            
+            rootRender('home', context);
+        }
     },
 
     {
         regexPath: /^\/about$/,
-        execute: () => rootRender('about')
+        execute: () => {
+
+            let context = {};
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+
+            rootRender('about', context);
+        }
     },
 
     {
         regexPath: /^\/login$/,
-        execute: () => rootRender('login')
+        execute: () => {
+
+            let context = {};
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+            
+            rootRender('login',  context);
+        }
     },
 
     {
         regexPath: /^\/register$/,
-        execute: () => rootRender('register')
+        execute: () => {
+
+            let context = {};
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+
+            rootRender('register', context);
+        }
     },
 
     {
         regexPath: /^\/tickets$/,
-        execute: () => 'tickets'
+        execute: () => {
+            let context = {};
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+            
+            //rootRender('tickets', context);
+        }
     },
 
     {
         regexPath: /^\/logout$/,
-        execute: () => 'logout'
+        execute: () => {
+            'logout'
+        }
     },
 
     {
         regexPath: /^\/top-movies$/,
-        execute: () => rootRender('topMovies')
+        execute: () => {
+
+            let context = {};
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+            
+            rootRender('topMovies', context);
+        }
     }
 ]
 

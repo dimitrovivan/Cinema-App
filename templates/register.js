@@ -3,8 +3,12 @@ import { register } from '../scripts/userServices.js';
 import headerTemplate from './partials/header.js';
 import footerTemplate from './partials/footer.js';
 
-export default () => html`
-${headerTemplate()}
+export default (
+    {
+        isLogged
+    }
+) => html`
+${headerTemplate(isLogged)}
 <div class="register-page">
                 <div class="register-page__header">
                     <h1>Sign up</h1>

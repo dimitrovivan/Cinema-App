@@ -1,4 +1,5 @@
 import { navigate } from "./router.js";
+import { addToLocalStorage } from "./util.js";
 
 const endpoints = {
     register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
@@ -103,6 +104,8 @@ export async function login() {
     let response = await request.post(endpoints.login, {email, password});
 
     if(!response.ok) return;
+
+    addToLocalStorage('isLogged', true);
 
     navigate('/');
 

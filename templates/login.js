@@ -3,8 +3,12 @@ import headerTemplate from './partials/header.js';
 import footerTemplate from './partials/footer.js';
 import { login } from '../scripts/userServices.js';
 
-export default () => html`
-${headerTemplate()}
+export default (
+    {
+        isLogged
+    }
+) => html`
+${headerTemplate(isLogged)}
 <div class="login-page">
                 <div class="login-page__header">
                     <h1>Sign in</h1>

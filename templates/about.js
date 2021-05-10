@@ -2,8 +2,12 @@ import { html } from 'https://unpkg.com/lit-html?module';
 import headerTemplate from './partials/header.js';
 import footerTemplate from './partials/footer.js';
 
-export default () => html`
-${headerTemplate()}
+export default (
+    {
+        isLogged
+    }
+) => html`
+${headerTemplate(isLogged)}
  <div class="about-page">
                 <div class="about-page__header">
                     <h1>Who are we?</h1>
