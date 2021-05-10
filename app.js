@@ -1,5 +1,9 @@
 import { navigate } from './scripts/router.js';
 
+( () => {
+    navigate(location.pathname);
+})();
+
 let rootElement = document.querySelector('.root');
 
 function navigateOnClick(e) {

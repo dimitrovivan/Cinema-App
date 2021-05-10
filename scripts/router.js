@@ -1,3 +1,4 @@
+
 const route = [
     {
         regexPath: /^\/$/,
@@ -46,7 +47,11 @@ function router(path) {
 
 window.addEventListener("popstate", () => router(location.pathname));
 
+const isExistingPath = (path) => route.find( ({ regexPath }) => path.match(regexPath)) ? true : false;
+
 export function navigate(path) {
+
+    if(!isExistingPath(path)) path = '/';
 
     history.pushState({}, '', path);
 
