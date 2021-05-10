@@ -1,23 +1,24 @@
+import { rootRender } from "./templateServices.js";
 
 const route = [
     {
         regexPath: /^\/$/,
-        execute: () => 'home'
+        execute: () => rootRender('home')
     },
 
     {
         regexPath: /^\/about$/,
-        execute: () => 'about'
+        execute: () => rootRender('about')
     },
 
     {
         regexPath: /^\/login$/,
-        execute: () => 'login'
+        execute: () => rootRender('login')
     },
 
     {
         regexPath: /^\/register$/,
-        execute: () => 'register'
+        execute: () => rootRender('register')
     },
 
     {
@@ -32,22 +33,21 @@ const route = [
 
     {
         regexPath: /^\/top-movies$/,
-        execute: () => 'bestMovies'
+        execute: () => rootRender('topMovies')
     }
 ]
 
 function router(path) {
 
     let currRoute = route.find( ({ regexPath }) => path.match(regexPath) );
-    
-    let rootElement = document.querySelector('.root');
 
-    rootElement.innerHTML = currRoute.execute();
+    currRoute.execute();
 }
 
 window.addEventListener("popstate", () => router(location.pathname));
 
 const isExistingPath = (path) => route.find( ({ regexPath }) => path.match(regexPath)) ? true : false;
+
 
 export function navigate(path) {
 
@@ -60,3 +60,4 @@ export function navigate(path) {
     window.dispatchEvent(customPopstate);
 
 }
+

@@ -22,7 +22,7 @@ ${headerTemplate()}
                    </div>
                 </div>
                 <div class="register-page__footer">
-                    <div><span>Already signed up ?</span><a href="/login">Sign in directly</a></div>
+                    <div><span>Already signed up ?</span><a href="/login" class="navLink">Sign in directly</a></div>
                 </div>
             </div>
 ${footerTemplate()};

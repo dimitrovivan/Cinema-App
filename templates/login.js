@@ -19,7 +19,7 @@ ${headerTemplate()}
                    </div>
                 </div>
                 <div class="login-page__footer">
-                    <div><span>New to Rxon?</span><a href="/register">Sign up now</a></div>
+                    <div><span>New to Rxon?</span><a href="/register" class="navLink">Sign up now</a></div>
                 </div>
             </div>
 ${footerTemplate()}

@@ -12,7 +12,7 @@ ${headerTemplate()}
         <h2 class="text-centered">Don't know what to watch, or where to spend your leisure ?</h2>
         <section class="check-out-section flex--column">
             <h3 class="text-centered">Check out top 3 rated movies for the week!</h3>
-            <a href="/top-movies" class="btn btn--primary">Check</a>
+            <a href="/top-movies" class="btn btn--primary navLink">Check</a>
         </section>
     </div>
 </div>
