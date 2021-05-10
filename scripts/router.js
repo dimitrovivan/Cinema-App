@@ -74,9 +74,14 @@ const route = [
         regexPath: /^\/logout$/,
         execute: () => {
             
-            if(localStorage.getItem('isLogged')) localStorage.removeItem('isLogged');
+            if(localStorage.getItem('isLogged')) {
+                
+                localStorage.removeItem('isLogged');
+                
+                return rootRender('home');
+            }
 
-            rootRender('home');
+            return rootRender('login');
         }
     },
 
