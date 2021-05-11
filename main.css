@@ -979,6 +979,7 @@ input {
   padding: 50px 30px;
   border-radius: 10px;
   z-index: 2;
+  display: none;
 }
 
 .confirm-tickets__heading {

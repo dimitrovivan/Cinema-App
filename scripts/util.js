@@ -41,6 +41,6 @@ export const request = {
             returnSecureToken: true
         }),
 
-    get: async(url) => await fetch(url)
+    get: async (url) => await fetch(url)
 
     }

@@ -1,4 +1,7 @@
 import { rootRender } from "./templateServices.js";
+import { request } from "./util.js";
+import { showNotification } from "./notifications.js";
+
 
 const route = [
     {
@@ -65,8 +68,46 @@ const route = [
             let isLogged = localStorage.getItem('isLogged');
 
             context.isLogged = isLogged;
+
+            rootRender('tickets', context);
+               
+        }
+    },
+
+    {
+        regexPath: /^\/tickets\/-.*\/[\d]{2}:[\d]{2}$/,
+        execute: async () => {
+
+            let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
+
+            let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
+
+            let context = {};
+
+            try {
+
+            let response = await request.get(movieURL);
+
+            let data = await response.json();
+
+            let selectedStream = data.streams.find(obj => Object.keys(obj)[0] == streamHour);
+
+            let seats = selectedStream[streamHour];
+
+            let reservedSpaces = Object.values(seats).reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0);
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            context.isLogged = isLogged;
+            context.seats = seats;
+            context.reservedSpaces = reservedSpaces;
+
+            rootRender('cinemaHall', context);
             
-            //rootRender('tickets', context);
+            } catch(e) {
+                showNotification.error("Something went wrong... Please try again");
+            }
+               
         }
     },
 
@@ -100,11 +141,11 @@ const route = [
     }
 ]
 
-function router(path) {
+async function router(path) {
 
     let currRoute = route.find( ({ regexPath }) => path.match(regexPath) );
 
-    currRoute.execute();
+    await currRoute.execute();
 }
 
 window.addEventListener("popstate", () => router(location.pathname));

@@ -11,10 +11,13 @@ import home from '../templates/home.js';
 import login from '../templates/login.js';
 import register from '../templates/register.js';
 import topMovies from '../templates/topMovies.js';
+import cinemaHall from '../templates/cinema-hall.js';
+import tickets from '../templates/tickets.js';
+
 
 const rootElement = document.querySelector('.root');
 
-const templates = {header, footer, about, home, login, register, topMovies};
+const templates = {header, footer, about, home, login, register, topMovies, tickets, cinemaHall};
 
 const getTemplate = (templateName, context) => templates[templateName](context);
 
