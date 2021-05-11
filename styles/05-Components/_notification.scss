@@ -1,7 +1,7 @@
 .notification-container {
    position: absolute;
    z-index: 999;
-   top: -100px;
+   top: -200px;
    left: 35%;
    transition: transform .6s ease-in-out;
 
@@ -27,7 +27,7 @@
    }
 
    &.show {
-    transform: translateY(180px);
+    transform: translateY(280px);
    }
 
    &.error {

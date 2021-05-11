@@ -423,7 +423,7 @@ p {
 .notification-container {
   position: absolute;
   z-index: 999;
-  top: -100px;
+  top: -200px;
   left: 35%;
   -webkit-transition: -webkit-transform .6s ease-in-out;
   transition: -webkit-transform .6s ease-in-out;
@@ -453,8 +453,8 @@ p {
 }
 
 .notification-container.show {
-  -webkit-transform: translateY(180px);
-          transform: translateY(180px);
+  -webkit-transform: translateY(280px);
+          transform: translateY(280px);
 }
 
 .notification-container.error {

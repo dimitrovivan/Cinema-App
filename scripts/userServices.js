@@ -1,6 +1,6 @@
 import { showNotification } from "./notifications.js";
 import { navigate } from "./router.js";
-import { addToLocalStorage, handleError} from "./util.js";
+import { addToLocalStorage, handleError, clearInputs} from "./util.js";
 
 const endpoints = {
     register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
@@ -42,9 +42,15 @@ const validateCredentials = {
 
     login: (email, password) => {
                
-        if(!checkForTruthyInputs(email, password)) return false;
-        
-        if(!checkForSpecificLength(password, 6)) return false;
+        if(!checkForTruthyInputs(email, password)) {
+            showNotification.error("You must fill all fields");
+            return false;
+        }
+
+        if(!checkForSpecificLength(password, 6)) {
+            showNotification.error("Your password must be at least 6 symbols");
+            return false;
+        }
 
         return true;
     }
@@ -109,7 +115,7 @@ export async function register() {
     return showNotification.success("Successfully registrated");
 
     } catch(error) {
-        console.log(error);
+
     }
 
 }
@@ -120,16 +126,30 @@ export async function login() {
 
     let { email, password } = getInputDataFromForm(loginForm);
 
-    // TODO: Show notif
-
     if(!validateCredentials.login(email, password)) return;
+
+    try {
 
     let response = await request.post(endpoints.login, {email, password});
 
-    if(!response.ok) return;
+    if(!response.ok) {
+
+        let data = await response.json();
+
+        clearInputs(".login-email", ".login-password");
+
+        return handleError(data.error.message);
+
+    }
 
     addToLocalStorage('isLogged', true);
 
     navigate('/');
+    
+    return showNotification.success("Logged in");
+
+    } catch(error) {
+
+    }
 
 }
