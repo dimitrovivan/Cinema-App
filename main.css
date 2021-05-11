@@ -374,6 +374,12 @@ p {
   padding: 0;
 }
 
+input {
+  padding-left: 10px;
+  outline: none;
+  border-radius: 5px;
+}
+
 .flex--row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -398,8 +404,9 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .page-wrapper {
@@ -703,10 +710,7 @@ p {
 .submit-form input {
   width: 80%;
   height: 30px;
-  padding-left: 10px;
   margin-bottom: 3rem;
-  outline: none;
-  border-radius: 5px;
 }
 
 .submit-form label {
@@ -850,7 +854,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 30px auto;
+  margin: 30px auto 0;
 }
 
 .tickets-page__header {
@@ -917,7 +921,39 @@ p {
 }
 
 .tickets-page__footer {
-  margin: 50px;
+  margin: 50px 50px 0;
+}
+
+.confirm-tickets {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 11, 11, 0.99);
+  padding: 50px 30px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.confirm-tickets__heading {
+  margin-bottom: 60px;
+  font-style: italic;
+}
+
+.confirm-tickets label {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.confirm-tickets input {
+  margin: 0 0 35px;
+  width: 60%;
+  height: 30px;
+}
+
+.confirm-tickets__footer .btn--primary {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 35px;
 }
 
 .text-centered {

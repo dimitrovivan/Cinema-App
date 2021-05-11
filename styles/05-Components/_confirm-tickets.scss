@@ -1,0 +1,34 @@
+.confirm-tickets {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 11, 11, 0.99);
+    padding: 50px 30px;
+    border-radius: 10px;
+    z-index: 2;
+
+    &__heading {
+        margin-bottom: 60px;
+        font-style: italic;
+    }
+
+    label {
+        margin-bottom: 15px;
+        font-size: 2rem;
+    }
+
+    input {
+        margin: 0 0 35px;
+        width: 60%;
+        height: 30px;
+    }
+
+    &__footer {
+        
+        .btn--primary {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 35px;
+        }
+    }
+}
