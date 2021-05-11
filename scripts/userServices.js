@@ -1,5 +1,6 @@
+import { showNotification } from "./notifications.js";
 import { navigate } from "./router.js";
-import { addToLocalStorage } from "./util.js";
+import { addToLocalStorage, handleError} from "./util.js";
 
 const endpoints = {
     register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
@@ -13,18 +14,28 @@ const request = {
             body: JSON.stringify(body),
             returnSecureToken: true
         })
-}
+
+    }
 
 
 const validateCredentials = {
 
     register: (email, password, repPassword) => {
 
-        if(!checkForTruthyInputs(email, password, repPassword)) return false;
+        if(!checkForTruthyInputs(email, password, repPassword)) {
+            showNotification.error("You must fill all fields");
+            return false;
+        }
 
-        if(!checkForSpecificLength(password, 6)) return false;
+        if(!checkForSpecificLength(password, 6)) {
+            showNotification.error("Your password must be at least 6 symbols");
+            return false;
+        }
 
-        if(password !== repPassword) return false;
+        if(password !== repPassword) {
+            showNotification.error("Password missmatch");
+            return false;
+        }
 
         return true;
     },
@@ -43,7 +54,7 @@ function getInputDataFromForm(formElement) {
 
     let email = formElement.querySelector('#email').value;
     let password = formElement.querySelector('#password').value;
-    let repPassword = formElement.querySelector('#password') ? formElement.querySelector('#password').value : null;
+    let repPassword = formElement.querySelector('#repPassword') ? formElement.querySelector('#repPassword').value : null;
 
     return {
         email,
@@ -80,15 +91,27 @@ export async function register() {
 
     let { email, password, repPassword } = getInputDataFromForm(registerForm);
 
-    // TODO: Show notif
-
     if(!validateCredentials.register(email, password, repPassword)) return;
+
+    try {
 
     let response = await request.post(endpoints.register, {email, password});
 
-    if(!response.ok) return;
 
+    if(!response.ok) {
+        let data = await response.json();
+
+        return handleError(data.error.message);
+
+    }
     navigate('/login');
+
+    return showNotification.success("Successfully registrated");
+
+    } catch(error) {
+        console.log(error);
+    }
+
 }
 
 export async function login() {
