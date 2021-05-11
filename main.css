@@ -838,6 +838,53 @@ input {
   line-height: 23px;
 }
 
+.tickets-page {
+  margin: 40px 20px 0;
+  padding-bottom: 50px;
+}
+
+.tickets-page .movie-card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tickets-page .streamHours {
+  margin-top: 20px;
+}
+
+.tickets-page .streamHours .btn--primary {
+  padding: 12px 25px;
+  font-size: 1.8rem;
+}
+
+.tickets-page .streamHours > * ~ * {
+  margin-left: 40px;
+}
+
+.tickets-page .cards-wrapper {
+  margin-top: 80px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  row-gap: 10rem;
+}
+
+.tickets-page .cards-wrapper > * {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 .cinema-hall {
   position: relative;
   max-width: 70%;

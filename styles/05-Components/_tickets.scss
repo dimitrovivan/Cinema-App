@@ -1,0 +1,42 @@
+.tickets-page {
+
+    
+    margin: 40px 20px 0;
+    padding-bottom: 50px;
+    
+    .movie-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .streamHours {
+
+        margin-top: 20px;
+
+        .btn--primary {
+            padding: 12px 25px;
+            font-size: 1.8rem;
+        }
+
+        & > * ~ * {
+            margin-left: 40px;
+        }
+    }
+
+
+    .cards-wrapper {
+        margin-top: 80px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 10rem;
+
+        & > * {
+            justify-self: center;
+        }
+        
+    }
+
+}
