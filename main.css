@@ -838,7 +838,7 @@ input {
   line-height: 23px;
 }
 
-.tickets-page {
+.cinema-hall {
   position: relative;
   max-width: 70%;
   display: -webkit-box;
@@ -857,12 +857,12 @@ input {
   margin: 30px auto 0;
 }
 
-.tickets-page__header {
+.cinema-hall__header {
   width: 100%;
   margin-bottom: 50px;
 }
 
-.tickets-page__header .screen {
+.cinema-hall__header .screen {
   position: relative;
   width: 60%;
   margin: 0 auto;
@@ -873,7 +873,7 @@ input {
   border-radius: 2px;
 }
 
-.tickets-page__header .screen::after {
+.cinema-hall__header .screen::after {
   content: '';
   position: absolute;
   width: 70%;
@@ -887,17 +887,17 @@ input {
           filter: blur(7px);
 }
 
-.tickets-page__heading {
+.cinema-hall__heading {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.tickets-page__description {
+.cinema-hall__description {
   text-align: right;
   color: #E50914;
 }
 
-.tickets-page__list {
+.cinema-hall__list {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -909,7 +909,7 @@ input {
           column-gap: 50px;
 }
 
-.tickets-page__list-item {
+.cinema-hall__list-item {
   display: block;
   width: 50px;
   height: 40px;
@@ -920,7 +920,7 @@ input {
           transform: rotateY(10deg);
 }
 
-.tickets-page__footer {
+.cinema-hall__footer {
   margin: 50px 50px 0;
 }
 
