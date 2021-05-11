@@ -420,6 +420,59 @@ p {
   background: rgba(14, 13, 13, 0.8);
 }
 
+.notification-container {
+  position: absolute;
+  z-index: 999;
+  top: -100px;
+  left: 35%;
+  -webkit-transition: -webkit-transform .6s ease-in-out;
+  transition: -webkit-transform .6s ease-in-out;
+  transition: transform .6s ease-in-out;
+  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
+  background-color: #413e3e;
+  width: 30%;
+  padding: 20px;
+  border-radius: 5px;
+  font-style: italic;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.notification-container::before {
+  content: '';
+  width: 5px;
+  height: 200px;
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 998;
+}
+
+.notification-container.show {
+  -webkit-transform: translateY(180px);
+          transform: translateY(180px);
+}
+
+.notification-container.error {
+  color: #ff2e2e;
+}
+
+.notification-container.error::before {
+  background-color: #ff2e2e;
+}
+
+.notification-container.success {
+  color: #2dfa5a;
+}
+
+.notification-container.success::before {
+  background-color: #2dfa5a;
+}
+
 .root {
   height: inherit;
   color: #e2e2e2;
