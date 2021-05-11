@@ -32,3 +32,15 @@ export function clearInputs(...selectors) {
 
     })
 }
+
+export const request = {
+    
+    post: async (url, body) => await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(body),
+            returnSecureToken: true
+        }),
+
+    get: async(url) => await fetch(url)
+
+    }

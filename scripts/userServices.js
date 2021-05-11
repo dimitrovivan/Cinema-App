@@ -1,22 +1,11 @@
 import { showNotification } from "./notifications.js";
 import { navigate } from "./router.js";
-import { addToLocalStorage, handleError, clearInputs} from "./util.js";
+import { addToLocalStorage, handleError, clearInputs, request} from "./util.js";
 
 const endpoints = {
     register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
     login: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`
 }
-
-const request = {
-    
-    post: async (url, body) => await fetch(url, {
-            method: "POST",
-            body: JSON.stringify(body),
-            returnSecureToken: true
-        })
-
-    }
-
 
 const validateCredentials = {
 
