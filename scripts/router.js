@@ -90,9 +90,7 @@ const route = [
 
             let data = await response.json();
 
-            let selectedStream = data.streams.find(obj => Object.keys(obj)[0] == streamHour);
-
-            let seats = selectedStream[streamHour];
+            let seats = data.streams[streamHour];
 
             let reservedSpaces = Object.values(seats).reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0);
 

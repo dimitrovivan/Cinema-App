@@ -33,8 +33,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_RKZoWXZsJt8_OWsAu/09:15" class="btn btn--primary navLink">09:15</a>
-                    <a href="/tickets/-M_RKZoWXZsJt8_OWsAu/18:30" class="btn btn--primary navLink">18:30</a>
+                    <a href="/tickets/-M_UFVRPLuMyfGiTCYp7/09:15" class="btn btn--primary navLink">09:15</a>
+                    <a href="/tickets/-M_UFVRPLuMyfGiTCYp7/18:30" class="btn btn--primary navLink">18:30</a>
                 </div>
 
             </div>
@@ -55,8 +55,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_RLBtJ2OPYphtEDO1p/11:15" class="btn btn--primary navLink">11:15</a>
-                    <a href="/tickets/-M_RLBtJ2OPYphtEDO1p/15:30" class="btn btn--primary navLink">15:30</a>
+                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/11:15" class="btn btn--primary navLink">11:15</a>
+                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/15:30" class="btn btn--primary navLink">15:30</a>
                 </div>
             </div>
 
@@ -76,8 +76,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_RLVnuPxFmAOiDolAd/13:15" class="btn btn--primary navLink">13:15</a>
-                    <a href="/tickets/-M_RLVnuPxFmAOiDolAd/16:30" class="btn btn--primary navLink">16:30</a>
+                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/13:15" class="btn btn--primary navLink">13:15</a>
+                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/16:30" class="btn btn--primary navLink">16:30</a>
                 </div>
 
             </div>
@@ -99,8 +99,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_RLounE3cQt11eMlRH/13:00" class="btn btn--primary navLink">13:00</a>
-                    <a href="/tickets/-M_RLounE3cQt11eMlRH/20:00" class="btn btn--primary navLink">20:00</a>
+                    <a href="/tickets/-M_UGT6TsclaGxc-luBS/13:00" class="btn btn--primary navLink">13:00</a>
+                    <a href="/tickets/-M_UGT6TsclaGxc-luBS/20:00" class="btn btn--primary navLink">20:00</a>
                 </div>
             </div>
 
