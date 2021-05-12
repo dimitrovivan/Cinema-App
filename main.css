@@ -965,6 +965,11 @@ input {
   margin-bottom: 30px;
 }
 
+.cinema-hall__description .ticket-price .span-price {
+  color: #E50914;
+  letter-spacing: 1px;
+}
+
 .cinema-hall__description .description-secondary-information {
   display: -webkit-box;
   display: -ms-flexbox;

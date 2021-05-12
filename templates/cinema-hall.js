@@ -37,7 +37,7 @@ ${headerTemplate(isLogged)}
     <div class="cinema-hall__header">
         <div class="cinema-hall__description">
             <div class="description-main-information">
-                <h3 class="ticket-price">Ticket Price: 6.99$</h3>
+                <h3 class="ticket-price">Ticket Price: <span class="span-price">6.99$</span></h3>
                 <h3 class="total-reserved">Reserved seats: ${reservedSpaces}/25</h3>
             </div>
 

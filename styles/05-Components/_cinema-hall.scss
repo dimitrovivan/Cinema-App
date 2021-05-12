@@ -48,6 +48,11 @@
 
         .ticket-price {
             margin-bottom: 30px;
+
+            .span-price {
+                color: $primary-red;
+                letter-spacing: 1px;
+            }
         }
 
         .description-secondary-information {
