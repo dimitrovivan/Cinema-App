@@ -78,3 +78,4 @@ const getSelectedSeats = () => Array.from(document.querySelectorAll('.cinema-hal
                                     .reduce( (acc, seat) => seat.classList.contains('selected') ? [...acc, seat] : [...acc], [])
 
 
+export const hideConfirmFormOnClick = () => document.querySelector('.confirm-tickets').style.display = "none";

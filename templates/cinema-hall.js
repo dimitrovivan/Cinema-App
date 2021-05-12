@@ -1,6 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import headerTemplate from './partials/header.js';
-import {listenForSeatClickAndChangeState, showAndSubmitConfirmForm, payForTickets} from '../scripts/movieServices.js';
+import {listenForSeatClickAndChangeState, showAndSubmitConfirmForm, payForTickets, hideConfirmFormOnClick} from '../scripts/movieServices.js';
 
 export default (
     {
@@ -12,6 +12,7 @@ export default (
 ${headerTemplate(isLogged)}
 <div class="cinema-hall">
   <div class="confirm-tickets">
+   <button class="btn btn--back" @click=${hideConfirmFormOnClick}>Back</button>
     <div class="confirm-tickets__header">
         <h1 class="confirm-tickets__heading text-centered">Please fill the data</h1>
     </div>
