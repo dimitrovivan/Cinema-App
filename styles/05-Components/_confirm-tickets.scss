@@ -6,6 +6,7 @@
     padding: 50px 30px;
     border-radius: 10px;
     z-index: 2;
+    display: none;
 
     &__heading {
         margin-bottom: 60px;
@@ -28,7 +29,7 @@
         .btn--primary {
             display: block;
             margin: 0 auto;
-            padding: 10px 35px;
+            padding: 10px 40px;
         }
     }
 }
