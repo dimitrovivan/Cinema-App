@@ -7,71 +7,47 @@ const route = [
     {
         regexPath: /^\/$/,
         execute: () => {
-            
-            let context = {};
-
             let isLogged = localStorage.getItem('isLogged');
 
-            context.isLogged = isLogged;
-            
-            return rootRender('home', context);
+            return rootRender('home', {isLogged});
         }
     },
 
     {
         regexPath: /^\/about$/,
         execute: () => {
-
-            let context = {};
-
             let isLogged = localStorage.getItem('isLogged');
 
-            context.isLogged = isLogged;
-
-            return rootRender('about', context);
+            return rootRender('about', {isLogged});
         }
     },
 
     {
         regexPath: /^\/login$/,
         execute: () => {
-
-            let context = {};
-
             let isLogged = localStorage.getItem('isLogged');
-
-            context.isLogged = isLogged;
             
-            return rootRender('login',  context);
+            return rootRender('login',  {isLogged});
         }
     },
 
     {
         regexPath: /^\/register$/,
         execute: () => {
-
-            let context = {};
-
             let isLogged = localStorage.getItem('isLogged');
 
-            context.isLogged = isLogged;
-
-            return rootRender('register', context);
+            return rootRender('register', {isLogged});
         }
     },
 
     {
         regexPath: /^\/tickets$/,
         execute: () => {
-            let context = {};
-
             let isLogged = localStorage.getItem('isLogged');
 
-            context.isLogged = isLogged;
+            if(!isLogged) return rootRender('login', {isLogged});
 
-            if(!isLogged) return rootRender('login', context);
-
-            return rootRender('tickets', context);
+            return rootRender('tickets', {isLogged});
                
         }
     },
@@ -83,8 +59,6 @@ const route = [
             let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
 
             let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
-
-            let context = {};
 
             try {
 
@@ -98,11 +72,7 @@ const route = [
 
             let isLogged = localStorage.getItem('isLogged');
 
-            context.isLogged = isLogged;
-            context.seats = seats;
-            context.reservedSpaces = reservedSpaces;
-
-            return rootRender('cinemaHall', context);
+            return rootRender('cinemaHall', {isLogged, seats, reservedSpaces});
             
             } catch(e) {
                 return showNotification.error("Something went wrong... Please try again");
@@ -131,14 +101,9 @@ const route = [
     {
         regexPath: /^\/top-movies$/,
         execute: () => {
-
-            let context = {};
-
             let isLogged = localStorage.getItem('isLogged');
 
-            context.isLogged = isLogged;
-
-            return rootRender('topMovies', context);
+            return rootRender('topMovies', {isLogged});
         }
     }
 ]
