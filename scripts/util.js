@@ -41,6 +41,11 @@ export const request = {
             returnSecureToken: true
         }),
 
-    get: async (url) => await fetch(url)
+    get: async (url) => await fetch(url),
+
+    patch: async (url,body) => await fetch(url , {
+        method: "PATCH",
+        body: JSON.stringify(body)
+    })
 
     }
