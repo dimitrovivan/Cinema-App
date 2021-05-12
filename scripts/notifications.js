@@ -10,7 +10,7 @@ export const showNotification = {
 
         setTimeout( () => {
             notificationElement.classList.remove('show');
-        },2300)
+        },2500)
     },
 
     success: (message) => {
@@ -21,7 +21,7 @@ export const showNotification = {
         setTimeout( () => {
             notificationElement.classList.remove('show');
 
-        },2000)
+        },2200)
     }
 
 }
