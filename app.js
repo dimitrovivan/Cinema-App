@@ -8,21 +8,24 @@ let rootElement = document.querySelector('.root');
 
 function navigateOnClick(e) {
 
+
     e.preventDefault();
     
     let {target} = e;
 
-    if(target.tagName !== "A" || !target.classList.contains('navLink')) return;
+    let path;
 
-    if(!target.href) return;
+    let fontParent = target.parentElement.parentElement;
 
-    let newURL = new URL(target.href);
-
-    if(newURL.pathname == location.pathname) return;
+    if(fontParent.classList.contains('navLink') && target.tagName == "FONT") path = new URL(fontParent.href).pathname;
+    else if(target.tagName == "A" && target.classList.contains('navLink')) path = new URL(target.href).pathname;
+    else return;
+    
+    if(path == location.pathname) return;
      
     document.querySelector('body').style.overflowY = "scroll";
     
-    navigate(newURL.pathname);
+    return navigate(path);
 
 }
 
