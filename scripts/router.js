@@ -14,7 +14,7 @@ const route = [
 
             context.isLogged = isLogged;
             
-            rootRender('home', context);
+            return rootRender('home', context);
         }
     },
 
@@ -28,7 +28,7 @@ const route = [
 
             context.isLogged = isLogged;
 
-            rootRender('about', context);
+            return rootRender('about', context);
         }
     },
 
@@ -42,7 +42,7 @@ const route = [
 
             context.isLogged = isLogged;
             
-            rootRender('login',  context);
+            return rootRender('login',  context);
         }
     },
 
@@ -56,7 +56,7 @@ const route = [
 
             context.isLogged = isLogged;
 
-            rootRender('register', context);
+            return rootRender('register', context);
         }
     },
 
@@ -69,7 +69,9 @@ const route = [
 
             context.isLogged = isLogged;
 
-            rootRender('tickets', context);
+            if(!isLogged) return rootRender('login', context);
+
+            return rootRender('tickets', context);
                
         }
     },
@@ -100,10 +102,10 @@ const route = [
             context.seats = seats;
             context.reservedSpaces = reservedSpaces;
 
-            rootRender('cinemaHall', context);
+            return rootRender('cinemaHall', context);
             
             } catch(e) {
-                showNotification.error("Something went wrong... Please try again");
+                return showNotification.error("Something went wrong... Please try again");
             }
                
         }
@@ -134,7 +136,7 @@ const route = [
 
             context.isLogged = isLogged;
 
-            rootRender('topMovies', context);
+            return rootRender('topMovies', context);
         }
     }
 ]

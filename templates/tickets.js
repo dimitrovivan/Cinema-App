@@ -55,8 +55,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/11:15" class="btn btn--primary navLink">11:15</a>
-                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/15:30" class="btn btn--primary navLink">15:30</a>
+                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/13:15" class="btn btn--primary navLink">13:15</a>
+                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/16:30" class="btn btn--primary navLink">16:30</a>
                 </div>
             </div>
 
@@ -76,8 +76,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/13:15" class="btn btn--primary navLink">13:15</a>
-                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/16:30" class="btn btn--primary navLink">16:30</a>
+                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/11:15" class="btn btn--primary navLink">11:15</a>
+                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/15:30" class="btn btn--primary navLink">15:30</a>
                 </div>
 
             </div>
