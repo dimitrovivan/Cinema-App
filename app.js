@@ -19,8 +19,9 @@ function navigateOnClick(e) {
     let newURL = new URL(target.href);
 
     if(newURL.pathname == location.pathname) return;
-
-
+     
+    document.querySelector('body').style.overflowY = "scroll";
+    
     navigate(newURL.pathname);
 
 }

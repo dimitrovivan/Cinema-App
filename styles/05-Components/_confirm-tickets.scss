@@ -1,9 +1,9 @@
 .confirm-tickets {
     position: absolute;
-    width: 100%;
+    width: 120%;
     height: 100%;
     background-color: rgba(12, 11, 11, 0.99);
-    padding: 50px 30px;
+    padding: 150px 30px;
     border-radius: 10px;
     z-index: 2;
     display: none;
@@ -29,7 +29,15 @@
         .btn--primary {
             display: block;
             margin: 0 auto;
-            padding: 10px 40px;
+            padding: 12px 20px;
+            width: 12%;
         }
+    }
+
+    .total-amount-container {
+        margin: 50px 0;
+        text-align: center;
+        font-size: 2rem;
+        font-style: italic;
     }
 }

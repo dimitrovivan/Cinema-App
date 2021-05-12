@@ -1,6 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html?module';
 import headerTemplate from './partials/header.js';
-import {listenForSeatClickAndChangeState, showAndSubmitConfirmForm, payForTickets, hideConfirmFormOnClick} from '../scripts/movieServices.js';
+import { listenForSeatClickAndChangeState, showAndSubmitConfirmForm, payForTickets, hideConfirmFormOnClick } from '../scripts/movieServices.js';
 
 export default (
     {
@@ -11,32 +11,45 @@ export default (
 ) => html`
 ${headerTemplate(isLogged)}
 <div class="cinema-hall">
-  <div class="confirm-tickets">
-   <button class="btn btn--back" @click=${hideConfirmFormOnClick}>Back</button>
-    <div class="confirm-tickets__header">
-        <h1 class="confirm-tickets__heading text-centered">Please fill the data</h1>
-    </div>
+    <div class="confirm-tickets">
+        <button class="btn btn--back" @click=${hideConfirmFormOnClick}>Back</button>
+        <div class="confirm-tickets__header">
+            <h1 class="confirm-tickets__heading text-centered">Please fill the data</h1>
+        </div>
 
-    <div class="confirm-tickets__form flex flex--column flex--centered">
-        <label for="first-name">First Name:</label>
-        <input type="text" id="first-name"/>
+        <div class="confirm-tickets__form flex flex--column flex--centered">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" />
 
-        <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name"/>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" />
 
-        <label for="card-id">Card Number:</label>
-          <input type="password" id="card-id"/>
+            <label for="card-id">Card Number:</label>
+            <input type="password" id="card-id" />
+        </div>
+
+        <div class="confirm-tickets__footer">
+            <button class="btn btn--primary" @click=${payForTickets}>Pay</button>
+        </div>
+
+        <div class="total-amount-container">124$</div>
     </div>
-    
-    <div class="confirm-tickets__footer">
-    <button class="btn btn--primary" @click=${payForTickets}>Pay</button>
-    </div>
-  </div>
     <div class="cinema-hall__header">
         <div class="cinema-hall__description">
-            <h3>Reserved seats ${reservedSpaces}/25</h3>
+            <div class="description-main-information">
+                <h3 class="ticket-price">Ticket Price: 6.99$</h3>
+                <h3 class="total-reserved">Reserved seats: ${reservedSpaces}/25</h3>
+            </div>
+
+            <div class="description-secondary-information">
+                <h4 class="free-seats">Free:</h4>
+                <h4 class="selected-seats">Selected:</h4>
+                <h4 class="reserved-seats">Reserved:</h4>
+            </div>
         </div>
-        <div class="cinema-hall__heading"><h1>Screen</h1></div>
+        <div class="cinema-hall__heading">
+            <h1>Screen</h1>
+        </div>
         <div class="screen"></div>
     </div>
 

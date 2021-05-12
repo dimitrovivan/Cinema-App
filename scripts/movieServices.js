@@ -23,6 +23,8 @@ export function showAndSubmitConfirmForm() {
     
     let confirmSection = document.querySelector('.confirm-tickets');
 
+    document.querySelector('body').style.overflowY = "hidden";
+    document.querySelector('.total-amount-container').textContent = `Total amount: ${(selectedSeats.length*6.99).toFixed(2)}$`
     confirmSection.style.display = "block";
 
 }
@@ -78,4 +80,7 @@ const getSelectedSeats = () => Array.from(document.querySelectorAll('.cinema-hal
                                     .reduce( (acc, seat) => seat.classList.contains('selected') ? [...acc, seat] : [...acc], [])
 
 
-export const hideConfirmFormOnClick = () => document.querySelector('.confirm-tickets').style.display = "none";
+export const hideConfirmFormOnClick = () => {
+    document.querySelector('body').style.overflowY = "scroll";
+    document.querySelector('.confirm-tickets').style.display = "none";
+}

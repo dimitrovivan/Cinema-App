@@ -428,7 +428,7 @@ input {
 }
 
 .notification-container {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: -200px;
   left: 35%;
@@ -952,8 +952,71 @@ input {
 }
 
 .cinema-hall__description {
-  text-align: right;
-  color: #E50914;
+  margin: 40px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cinema-hall__description .ticket-price {
+  margin-bottom: 30px;
+}
+
+.cinema-hall__description .description-secondary-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cinema-hall__description .free-seats,
+.cinema-hall__description .selected-seats {
+  margin-bottom: 30px;
+}
+
+.cinema-hall__description .free-seats,
+.cinema-hall__description .selected-seats,
+.cinema-hall__description .reserved-seats {
+  position: relative;
+  margin-right: 5px;
+}
+
+.cinema-hall__description .free-seats::after,
+.cinema-hall__description .selected-seats::after,
+.cinema-hall__description .reserved-seats::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-transform: rotateY(10deg);
+          transform: rotateY(10deg);
+  right: -50px;
+}
+
+.cinema-hall__description .free-seats::after {
+  background-color: white;
+}
+
+.cinema-hall__description .selected-seats::after {
+  background-color: green;
+}
+
+.cinema-hall__description .reserved-seats::after {
+  background-color: #E50914;
 }
 
 .cinema-hall__list {
@@ -990,15 +1053,15 @@ input {
 }
 
 .cinema-hall__footer {
-  margin: 50px 50px 0;
+  margin: 50px 50px;
 }
 
 .confirm-tickets {
   position: absolute;
-  width: 100%;
+  width: 120%;
   height: 100%;
   background-color: rgba(12, 11, 11, 0.99);
-  padding: 50px 30px;
+  padding: 150px 30px;
   border-radius: 10px;
   z-index: 2;
   display: none;
@@ -1023,7 +1086,15 @@ input {
 .confirm-tickets__footer .btn--primary {
   display: block;
   margin: 0 auto;
-  padding: 10px 40px;
+  padding: 12px 20px;
+  width: 12%;
+}
+
+.confirm-tickets .total-amount-container {
+  margin: 50px 0;
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
 }
 
 .text-centered {
