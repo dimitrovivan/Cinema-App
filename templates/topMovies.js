@@ -14,7 +14,7 @@ ${headerTemplate(isLogged)}
                 <div class="cards-wrapper">
                     <div class="movie-card">
                         <div class="movie-card__header">
-                            <img src="./images/captain-america.jpg" alt="Winter Soldier picture">
+                            <img src="./images/the-winter-soldier.jpg" alt="Winter Soldier picture">
                         </div>
                         <div class="movie-card__body">
                             <h3 class="movie-card__heading">The Winter Soldier</h3>
@@ -41,7 +41,7 @@ ${headerTemplate(isLogged)}
 
                       <div class="movie-card">
                         <div class="movie-card__header">
-                            <img src="./images/thor.jpg" alt="Thor picture">
+                            <img src="./images/thor-2.jpg" alt="Thor picture">
                         </div>
                         <div class="movie-card__body">
                             <h3 class="movie-card__heading">Thor 2</h3>

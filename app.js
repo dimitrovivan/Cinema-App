@@ -22,9 +22,7 @@ function navigateOnClick(e) {
     else return;
     
     if(path == location.pathname) return;
-     
-    document.querySelector('body').style.overflowY = "scroll";
-    
+         
     return navigate(path);
 
 }

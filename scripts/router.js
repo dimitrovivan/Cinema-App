@@ -38,12 +38,18 @@ const route = [
 
     {
         regexPath: /^\/all-movies$/,
-        execute: () => {
+        execute: async () => {
             let isLogged = localStorage.getItem('isLogged');
 
             let dateInfo = getDateInfo();
-            
-            return rootRender('allMovies', {isLogged, ...dateInfo});
+
+            let response = await request.get('https://cinema-app-7733d-default-rtdb.firebaseio.com/movies.json');
+
+            let moviesData = await response.json();
+
+            moviesData = moviesData ? moviesData : {};
+
+            return rootRender('allMovies', {isLogged, ...dateInfo, moviesData});
                
         }
     },
@@ -70,7 +76,10 @@ const route = [
 
             let reservedSpaces = Object.values(seats).reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0);
 
-            return rootRender('cinemaHall', {isLogged, seats, reservedSpaces});
+            rootRender('cinemaHall', {isLogged, seats, reservedSpaces});
+
+            window.scrollTo(0, 0);
+            return;
 
             } catch(e) {
                 return showNotification.error("Something went wrong... Please try again");
@@ -110,8 +119,6 @@ async function router(path) {
 
     await currRoute.execute();
 
-    window.scrollTo(0,0);
-
 }
 
 window.addEventListener("popstate", () => router(location.pathname));
@@ -121,6 +128,8 @@ const isExistingPath = (path) => route.find( ({ regexPath }) => path.match(regex
 
 
 export function navigate(path) {
+
+    document.querySelector('body').style.overflowY = "scroll";
 
     if(!isExistingPath(path)) path = '/';
 
