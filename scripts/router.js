@@ -113,6 +113,9 @@ async function router(path) {
     let currRoute = route.find( ({ regexPath }) => path.match(regexPath) );
 
     await currRoute.execute();
+
+    window.scrollTo(0,0);
+
 }
 
 window.addEventListener("popstate", () => router(location.pathname));
