@@ -8,11 +8,8 @@ export function listenForSeatClickAndChangeState(e) {
 
     if(!target.classList.contains('cinema-hall__list-item') || target.classList.contains('reserved')) return;
 
-    if(target.classList.contains('selected')) {
-        target.classList.remove('selected');
-    } else {
-        target.classList.add('selected');
-    }
+    target.classList.contains('selected') ? target.classList.remove('selected') : target.classList.add('selected');
+
 }
 
 export function showAndSubmitConfirmForm() {
@@ -33,11 +30,7 @@ export async function payForTickets() {
 
     let selectedSeats = getSelectedSeats();
 
-    let firstNameElement = document.querySelector('#first-name');
-    let lastNameElement = document.querySelector('#last-name');
-    let cardIdElement = document.querySelector('#card-id');
-
-    if(!firstNameElement.value || !lastNameElement.value || !cardIdElement.value) return showNotification.error("You must fill all inputs");
+    if(!validatePayCredentials()) return;
     
     let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
 
@@ -54,15 +47,13 @@ export async function payForTickets() {
     Array.from(selectedSeats).map(seat => chosenStream[seat.dataset.seat] = "reserved");
 
     let changedStreams = {};
-     
+
     Object.keys(allStreams).forEach( key => {
 
-       if (key == streamHour) {
-           changedStreams[key] = chosenStream;
-       } else {
-           changedStreams[key] = allStreams[key];
-       }
-    } );
+       if (key == streamHour) changedStreams[key] = chosenStream;
+       else  changedStreams[key] = allStreams[key];
+       
+    });
 
     let patchBody = {  streams: changedStreams }
 
@@ -83,4 +74,19 @@ const getSelectedSeats = () => Array.from(document.querySelectorAll('.cinema-hal
 export const hideConfirmFormOnClick = () => {
     document.querySelector('body').style.overflowY = "scroll";
     document.querySelector('.confirm-tickets').style.display = "none";
+}
+
+function validatePayCredentials() {
+
+    let firstNameElement = document.querySelector('#first-name');
+    let lastNameElement = document.querySelector('#last-name');
+    let cardIdElement = document.querySelector('#card-id');
+
+    if(!firstNameElement.value || !lastNameElement.value || !cardIdElement.value) {
+        showNotification.error("You must fill all inputs");
+        return false;
+    }
+
+    return true;
+
 }
