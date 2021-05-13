@@ -49,3 +49,17 @@ export const request = {
     })
 
     }
+
+    export function getDateInfo() {
+
+        const date = new Date();
+        const month = date.toLocaleString('en-us', { month: 'long' });
+        const day = date.getDate();
+        const year = date.getFullYear();
+
+        return {
+            month,
+            day,
+            year
+        }
+    }

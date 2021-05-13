@@ -4,12 +4,15 @@ import headerTemplate from './partials/header.js';
 export default (
     {
         isLogged,
+        month,
+        day
     }
 ) => html`
 ${headerTemplate(isLogged)}
 <div class="all-movies">
     <div class="all-movies__header">
         <h1 class="all-movies__heading text-centered">Choose a movie and stream hour</h1>
+        <h3 class="all-movies__date text-centered">Daily Catalog for: <span> ${day} ${month} </span></h3>
     </div>
 
     <div class="all-movies__body">

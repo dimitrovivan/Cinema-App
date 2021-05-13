@@ -1,5 +1,5 @@
 import { rootRender } from "./templateServices.js";
-import { request } from "./util.js";
+import { request, getDateInfo } from "./util.js";
 import { showNotification } from "./notifications.js";
 
 
@@ -40,7 +40,10 @@ const route = [
         regexPath: /^\/all-movies$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-            return rootRender('allMovies', {isLogged});
+
+            let dateInfo = getDateInfo();
+            
+            return rootRender('allMovies', {isLogged, ...dateInfo});
                
         }
     },

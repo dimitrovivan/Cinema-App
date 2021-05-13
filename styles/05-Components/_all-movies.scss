@@ -10,6 +10,17 @@
         align-items: center;
     }
 
+    &__date {
+        margin-top: 20px;
+        font-style: italic;
+        font-weight: 500;
+        color: rgb(190, 187, 187);
+
+        span {
+            color: white;
+        }
+    }
+
     .streamHours {
 
         margin-top: 30px;

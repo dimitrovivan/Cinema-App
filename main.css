@@ -897,6 +897,17 @@ input {
           align-items: center;
 }
 
+.all-movies__date {
+  margin-top: 20px;
+  font-style: italic;
+  font-weight: 500;
+  color: #bebbbb;
+}
+
+.all-movies__date span {
+  color: white;
+}
+
 .all-movies .streamHours {
   margin-top: 30px;
 }
