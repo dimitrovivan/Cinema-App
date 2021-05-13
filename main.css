@@ -760,6 +760,10 @@ input {
   margin-top: 5rem;
 }
 
+.login-page__footer span, .login-page__footer a {
+  font-size: 2rem;
+}
+
 .login-page__footer span {
   margin-right: 10px;
   padding-right: 5px;
@@ -767,7 +771,6 @@ input {
 }
 
 .login-page__footer a {
-  font-size: 1.6rem;
   color: #e2e2e2;
   -webkit-animation: booping 1.5s infinite alternate;
           animation: booping 1.5s infinite alternate;
@@ -789,6 +792,10 @@ input {
   margin-top: 5rem;
 }
 
+.register-page__footer span, .register-page__footer a {
+  font-size: 2rem;
+}
+
 .register-page__footer span {
   margin-right: 10px;
   padding-right: 5px;
@@ -796,7 +803,6 @@ input {
 }
 
 .register-page__footer a {
-  font-size: 1.6rem;
   color: #e2e2e2;
   -webkit-animation: booping 1.5s infinite alternate;
           animation: booping 1.5s infinite alternate;
