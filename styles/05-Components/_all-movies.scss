@@ -1,7 +1,7 @@
-.tickets-page {
+.all-movies {
 
     
-    margin: 40px 20px 0;
+    margin: 20px 20px 0;
     padding-bottom: 50px;
     
     .movie-card-wrapper {
@@ -12,7 +12,7 @@
 
     .streamHours {
 
-        margin-top: 20px;
+        margin-top: 30px;
 
         .btn--primary {
             padding: 12px 25px;
@@ -26,7 +26,7 @@
 
 
     .cards-wrapper {
-        margin-top: 80px;
+        margin-top: 50px;
 
         display: grid;
         grid-template-columns: 1fr 1fr;

@@ -41,19 +41,19 @@ const route = [
     },
 
     {
-        regexPath: /^\/tickets$/,
+        regexPath: /^\/all-movies$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
 
             if(!isLogged) return rootRender('login', {isLogged});
 
-            return rootRender('tickets', {isLogged});
+            return rootRender('allMovies', {isLogged});
                
         }
     },
 
     {
-        regexPath: /^\/tickets\/-.*\/[\d]{2}:[\d]{2}$/,
+        regexPath: /^\/all-movies\/-.*\/[\d]{2}:[\d]{2}$/,
         execute: async () => {
 
             let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");

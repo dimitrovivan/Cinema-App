@@ -333,6 +333,20 @@ body {
   z-index: -999;
 }
 
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(14, 13, 13, 0.8);
+  width: 80%;
+  border-radius: 10px;
+}
+
 button {
   outline: none;
 }
@@ -670,8 +684,8 @@ input {
 
 .home-page__body .btn {
   margin: 50px 0 0;
-  padding: 15px 30px;
-  font-size: 1.7rem;
+  padding: 7px 9px;
+  font-size: 2.2rem;
 }
 
 .about-page {
@@ -788,11 +802,20 @@ input {
           animation: booping 1.5s infinite alternate;
 }
 
-.top-movies-page {
-  margin: 70px 30px 0;
+.top-movies {
+  margin: 30px 30px 0;
 }
 
-.top-movies-page .cards-wrapper {
+.top-movies__heading {
+  margin: 0 0 30px 40px;
+}
+
+.top-movies__heading .navLink {
+  font-size: 1.8rem;
+  color: #E50914;
+}
+
+.top-movies .cards-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -801,7 +824,7 @@ input {
           justify-content: space-evenly;
 }
 
-.top-movies-page .cards-wrapper > * {
+.top-movies .cards-wrapper > * {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -850,12 +873,12 @@ input {
   line-height: 23px;
 }
 
-.tickets-page {
-  margin: 40px 20px 0;
+.all-movies {
+  margin: 20px 20px 0;
   padding-bottom: 50px;
 }
 
-.tickets-page .movie-card-wrapper {
+.all-movies .movie-card-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -868,21 +891,21 @@ input {
           align-items: center;
 }
 
-.tickets-page .streamHours {
-  margin-top: 20px;
+.all-movies .streamHours {
+  margin-top: 30px;
 }
 
-.tickets-page .streamHours .btn--primary {
+.all-movies .streamHours .btn--primary {
   padding: 12px 25px;
   font-size: 1.8rem;
 }
 
-.tickets-page .streamHours > * ~ * {
+.all-movies .streamHours > * ~ * {
   margin-left: 40px;
 }
 
-.tickets-page .cards-wrapper {
-  margin-top: 80px;
+.all-movies .cards-wrapper {
+  margin-top: 50px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -892,7 +915,7 @@ input {
   row-gap: 10rem;
 }
 
-.tickets-page .cards-wrapper > * {
+.all-movies .cards-wrapper > * {
   -ms-grid-column-align: center;
       justify-self: center;
 }

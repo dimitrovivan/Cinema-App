@@ -7,12 +7,12 @@ export default (
     }
 ) => html`
 ${headerTemplate(isLogged)}
-<div class="tickets-page">
-    <div class="tickets-page__header">
-        <h1 class="tickets-page__heading text-centered">Choose a movie and stream hour</h1>
+<div class="all-movies">
+    <div class="all-movies__header">
+        <h1 class="all-movies__heading text-centered">Choose a movie and stream hour</h1>
     </div>
 
-    <div class="tickets-page__body">
+    <div class="all-movies__body">
         <div class="cards-wrapper">
 
             <div class="movie-card-wrapper">
@@ -33,8 +33,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_UFVRPLuMyfGiTCYp7/09:15" class="btn btn--primary navLink">09:15</a>
-                    <a href="/tickets/-M_UFVRPLuMyfGiTCYp7/18:30" class="btn btn--primary navLink">18:30</a>
+                    <a href="/all-movies/-M_UFVRPLuMyfGiTCYp7/09:15" class="btn btn--primary navLink">09:15</a>
+                    <a href="/all-movies/-M_UFVRPLuMyfGiTCYp7/18:30" class="btn btn--primary navLink">18:30</a>
                 </div>
 
             </div>
@@ -55,8 +55,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/13:15" class="btn btn--primary navLink">13:15</a>
-                    <a href="/tickets/-M_UFr2CDR74Fcj8SxWq/16:30" class="btn btn--primary navLink">16:30</a>
+                    <a href="/all-movies/-M_UFr2CDR74Fcj8SxWq/13:15" class="btn btn--primary navLink">13:15</a>
+                    <a href="/all-movies/-M_UFr2CDR74Fcj8SxWq/16:30" class="btn btn--primary navLink">16:30</a>
                 </div>
             </div>
 
@@ -76,8 +76,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/11:15" class="btn btn--primary navLink">11:15</a>
-                    <a href="/tickets/-M_UGAuzUytN_-tJaY9M/15:30" class="btn btn--primary navLink">15:30</a>
+                    <a href="/all-movies/-M_UGAuzUytN_-tJaY9M/11:15" class="btn btn--primary navLink">11:15</a>
+                    <a href="/all-movies/-M_UGAuzUytN_-tJaY9M/15:30" class="btn btn--primary navLink">15:30</a>
                 </div>
 
             </div>
@@ -99,8 +99,8 @@ ${headerTemplate(isLogged)}
                 </div>
 
                 <div class="streamHours">
-                    <a href="/tickets/-M_UGT6TsclaGxc-luBS/13:00" class="btn btn--primary navLink">13:00</a>
-                    <a href="/tickets/-M_UGT6TsclaGxc-luBS/20:00" class="btn btn--primary navLink">20:00</a>
+                    <a href="/all-movies/-M_UGT6TsclaGxc-luBS/13:00" class="btn btn--primary navLink">13:00</a>
+                    <a href="/all-movies/-M_UGT6TsclaGxc-luBS/20:00" class="btn btn--primary navLink">20:00</a>
                 </div>
             </div>
 

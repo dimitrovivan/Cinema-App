@@ -7,7 +7,7 @@ export default (isLogged) => html`
                     <ul class="header__list flex--row">
                         <li class="header__list-item"><a href="/" class="header__link navLink">Home</a></li>
                         <li class="header__list-item"><a href="/about" class="header__link navLink">About</a></li>
-                        <li class="header__list-item"><a href="/tickets" class="header__link navLink">Tickets</a></li>
+                        <li class="header__list-item"><a href="/all-movies" class="header__link navLink">All Movies</a></li>
                         ${
                         isLogged ? 
                         html`
