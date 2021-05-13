@@ -106,9 +106,19 @@ const route = [
 
     {
         regexPath: /^\/top-movies$/,
-        execute: () => {
+        execute: async () => {
             let isLogged = localStorage.getItem('isLogged');
-            return rootRender('topMovies', {isLogged});
+
+            let response = await request.get('https://cinema-app-7733d-default-rtdb.firebaseio.com/movies.json');
+            let data = await response.json();
+            
+            let moviesData = {};
+
+            if(data)  Object.keys(data)
+                          .slice(0, 3)
+                          .forEach( movieId => {moviesData[movieId] = data[movieId]})
+
+            return rootRender('topMovies', {isLogged, moviesData});
         }
     }
 ]
