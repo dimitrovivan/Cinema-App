@@ -130,7 +130,8 @@ export async function login() {
         return handleError(data.error.message);
 
     }
-
+    
+    let navigatePath = '/';
     addToLocalStorage('isLogged', true);
 
         let previousLoc = location.pathname;
@@ -139,10 +140,10 @@ export async function login() {
     
         if(firstPartOfPath == 'all-movies') {
             history.replaceState({}, '', previousLoc);
-            return navigate(previousLoc);
+            navigatePath = previousLoc;
         }
     
-        navigate('/');
+        navigate(navigatePath);
         
         return showNotification.success("Logged in");
     
