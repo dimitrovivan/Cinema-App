@@ -7,7 +7,10 @@ export default (
     }
 ) => html`
 ${headerTemplate(isLogged)}
-<div class="top-movies-page">
+<div class="top-movies">
+    <div class="top-movies__header">
+        <h6 class="top-movies__heading">Not your type ? Check out <a href="/tickets" class="navLink">All Movies</a></h6>
+    </div>
                 <div class="cards-wrapper">
                     <div class="movie-card">
                         <div class="movie-card__header">

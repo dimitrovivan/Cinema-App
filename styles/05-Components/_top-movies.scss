@@ -1,5 +1,14 @@
-.top-movies-page {
-    margin: 70px 30px 0;
+.top-movies {
+    margin: 30px 30px 0;
+
+    &__heading {
+        margin: 0 0 30px 40px;
+
+        .navLink {
+            font-size: 1.8rem;
+            color: $primary-red;
+        }
+    }
 
     .cards-wrapper {
         display: flex;
