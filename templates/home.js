@@ -15,8 +15,8 @@ ${headerTemplate(isLogged)}
     <div class="home-page__body">
         <h2 class="text-centered">Don't know what to watch, or where to spend your leisure ?</h2>
         <section class="check-out-section flex--column">
-            <h3 class="text-centered">Check out top 3 rated movies for the week!</h3>
-            <a href="/top-movies" class="btn btn--primary navLink">Check</a>
+            <h3 class="text-centered">Check out <a href="/top-movies" class="btn btn--primary navLink">Top 3 </a>
+ rated movies for the week!</h3>
         </section>
     </div>
 </div>
