@@ -133,12 +133,21 @@ export async function login() {
 
     addToLocalStorage('isLogged', true);
 
-    navigate('/');
+        let previousLoc = location.pathname;
     
-    return showNotification.success("Logged in");
-
+        let firstPartOfPath = previousLoc.split('/').filter(res => res != "")[0];
+    
+        if(firstPartOfPath == 'all-movies') {
+            history.replaceState({}, '', previousLoc);
+            return navigate(previousLoc);
+        }
+    
+        navigate('/');
+        
+        return showNotification.success("Logged in");
+    
     } catch(error) {
-
-    }
-
+    
+        }
+    
 }

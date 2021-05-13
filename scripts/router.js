@@ -8,7 +8,6 @@ const route = [
         regexPath: /^\/$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-
             return rootRender('home', {isLogged});
         }
     },
@@ -17,7 +16,6 @@ const route = [
         regexPath: /^\/about$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-
             return rootRender('about', {isLogged});
         }
     },
@@ -26,7 +24,6 @@ const route = [
         regexPath: /^\/login$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-            
             return rootRender('login',  {isLogged});
         }
     },
@@ -35,7 +32,6 @@ const route = [
         regexPath: /^\/register$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-
             return rootRender('register', {isLogged});
         }
     },
@@ -44,9 +40,6 @@ const route = [
         regexPath: /^\/all-movies$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-
-            if(!isLogged) return rootRender('login', {isLogged});
-
             return rootRender('allMovies', {isLogged});
                
         }
@@ -55,6 +48,10 @@ const route = [
     {
         regexPath: /^\/all-movies\/-.*\/[\d]{2}:[\d]{2}$/,
         execute: async () => {
+
+            let isLogged = localStorage.getItem('isLogged');
+
+            if(!isLogged) return rootRender('login', {isLogged});
 
             let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
 
@@ -70,10 +67,8 @@ const route = [
 
             let reservedSpaces = Object.values(seats).reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0);
 
-            let isLogged = localStorage.getItem('isLogged');
-
             return rootRender('cinemaHall', {isLogged, seats, reservedSpaces});
-            
+
             } catch(e) {
                 return showNotification.error("Something went wrong... Please try again");
             }
@@ -93,7 +88,6 @@ const route = [
 
                 return showNotification.success("Logged out");
             }
-
             return rootRender('login');
         }
     },
@@ -102,7 +96,6 @@ const route = [
         regexPath: /^\/top-movies$/,
         execute: () => {
             let isLogged = localStorage.getItem('isLogged');
-
             return rootRender('topMovies', {isLogged});
         }
     }
@@ -120,6 +113,7 @@ async function router(path) {
 
 window.addEventListener("popstate", () => router(location.pathname));
 
+
 const isExistingPath = (path) => route.find( ({ regexPath }) => path.match(regexPath)) ? true : false;
 
 
@@ -127,7 +121,7 @@ export function navigate(path) {
 
     if(!isExistingPath(path)) path = '/';
 
-    history.pushState({}, '', path);
+    if(location.pathname !== path) history.pushState({}, '', path);
 
     let customPopstate = new CustomEvent("popstate");
 
