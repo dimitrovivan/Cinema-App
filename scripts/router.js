@@ -7,40 +7,27 @@ import { showNotification } from "./notifications.js";
 const route = [
     {
         regexPath: /^\/$/,
-        execute: () => {
-            let isLogged = localStorage.getItem('isLogged');
-            return rootRender('home', {isLogged});
-        }
+        execute: () => rootRender('home')
     },
 
     {
         regexPath: /^\/about$/,
-        execute: () => {
-            let isLogged = localStorage.getItem('isLogged');
-            return rootRender('about', {isLogged});
-        }
+        execute: () => rootRender('about')
     },
 
     {
         regexPath: /^\/login$/,
-        execute: () => {
-            let isLogged = localStorage.getItem('isLogged');
-            return rootRender('login',  {isLogged});
-        }
+        execute: () => rootRender('login')
     },
 
     {
         regexPath: /^\/register$/,
-        execute: () => {
-            let isLogged = localStorage.getItem('isLogged');
-            return rootRender('register', {isLogged});
-        }
+        execute: () => rootRender('register')
     },
 
     {
         regexPath: /^\/all-movies$/,
         execute: async () => {
-            let isLogged = localStorage.getItem('isLogged');
 
             let dateInfo = getDateInfo();
 
@@ -50,7 +37,7 @@ const route = [
 
             moviesData = moviesData ? moviesData : {};
 
-            return rootRender('allMovies', {isLogged, ...dateInfo, moviesData});
+            return rootRender('allMovies', {...dateInfo, moviesData});
                
         }
     },
@@ -61,7 +48,7 @@ const route = [
 
             let isLogged = localStorage.getItem('isLogged');
 
-            if(!isLogged) return rootRender('login', {isLogged});
+            if(!isLogged) return rootRender('login');
 
             let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
 
@@ -77,7 +64,7 @@ const route = [
 
             let reservedSpaces = Object.values(seats).reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0);
 
-            rootRender('cinemaHall', {isLogged, seats, reservedSpaces});
+            rootRender('cinemaHall', {seats, reservedSpaces});
 
             window.scrollTo(0, 0);
             return;
@@ -108,7 +95,6 @@ const route = [
     {
         regexPath: /^\/top-movies$/,
         execute: async () => {
-            let isLogged = localStorage.getItem('isLogged');
 
             let response = await request.get('https://cinema-app-7733d-default-rtdb.firebaseio.com/movies.json');
             let data = await response.json();
@@ -130,12 +116,12 @@ const route = [
                      .values(data[b].streams)
                      .forEach(streamSeats => {bReservedSeats += streamSeats.reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0)})
 
-                     console.log(aReservedSeats, bReservedSeats);
                 return bReservedSeats - aReservedSeats;
+                
             }).slice(0, 3)
               .forEach( movieId => {moviesData[movieId] = data[movieId]})
 
-            return rootRender('topMovies', {isLogged, moviesData});
+            return rootRender('topMovies', {moviesData});
         }
     }
 ]
