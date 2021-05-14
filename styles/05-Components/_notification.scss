@@ -2,9 +2,8 @@
    position: fixed;
    z-index: 999;
    top: -200px;
-   left: 35%;
+   left: 25%;
    transition: transform .6s ease-in-out;
-
    background-color: rgb(65, 62, 62);
    width: 30%;
    padding: 20px;
@@ -14,6 +13,10 @@
    font-weight: 500;
    text-align: center;
    letter-spacing: 1px;
+
+    @include for-phone-only {
+        width: 50%;
+    }
 
    &::before {
        content: '';
