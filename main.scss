@@ -1,5 +1,6 @@
 @import './styles/01-Tools/colors';
 @import './styles/01-Tools/animations';
+@import './styles/01-Tools/mixins';
 
 @import './styles/02-Generics/normalizer';
 @import './styles/02-Generics/typography';
@@ -32,5 +33,6 @@
 @import './styles/05-Components/all-movies';
 @import './styles/05-Components/cinema-hall';
 @import './styles/05-Components/confirm-tickets';
+@import './styles/05-Components/burger-menu';
 
 @import './styles/06-Utilities/centered';

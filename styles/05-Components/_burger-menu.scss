@@ -1,9 +1,9 @@
 .burger-menu {
     display: none;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+    z-index: 999;
+    top: 30px;
+    right: 20px;
     padding: 20px 15px;
     background-color: $primary-red;
     border-radius: 5px;
@@ -14,6 +14,12 @@
 
     &.open {
 
+        .burger-menu__icon,
+        .burger-menu__icon::before,
+        .burger-menu__icon::after {
+            border-radius: 0;
+        }
+        
         .burger-menu__icon {
             transform: translateX(-60px);
             background: transparent;

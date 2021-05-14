@@ -8,3 +8,13 @@
         color: $primary-red;
     }
 }
+
+@keyframes reveal {
+    from {
+        transform: translate(-200px, 0);
+    }
+
+    to {
+        transform: translate(0px, 0px);
+    }
+}

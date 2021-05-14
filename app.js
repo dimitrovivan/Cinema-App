@@ -4,7 +4,8 @@ import { navigate } from './scripts/router.js';
     navigate(location.pathname);
 })();
 
-let rootElement = document.querySelector('.root');
+const rootElement = document.querySelector('.root');
+
 
 function navigateOnClick(e) {
 
@@ -28,4 +29,3 @@ function navigateOnClick(e) {
 }
 
 rootElement.addEventListener('click', navigateOnClick);
-
