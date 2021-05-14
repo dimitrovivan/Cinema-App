@@ -5,6 +5,18 @@
     background-color: $black-900;
     border-radius: 20px;
 
+    @include for-tablet-portrait-up {
+        max-width: 70%;
+        margin: 6rem auto 0;
+    }
+
+    @include for-phone-only {
+        max-width: 90%;
+        margin: 5rem auto 6rem;
+        padding: 1rem;
+
+    }
+
     &__header {
         
         h1 {

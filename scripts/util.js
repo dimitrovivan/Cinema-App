@@ -35,11 +35,21 @@ export function clearInputs(...selectors) {
 
 export const request = {
     
-    post: async (url, body) => await fetch(url, {
+    post: async (url, body) => { 
+
+        try {
+
+        return await fetch(url, {
             method: "POST",
             body: JSON.stringify(body),
             returnSecureToken: true
-        }),
+        })
+
+    }
+     catch(e) {
+        showNotification.error("Weak connection, please try again");
+    }
+},
 
     get: async (url) => await fetch(url),
 
