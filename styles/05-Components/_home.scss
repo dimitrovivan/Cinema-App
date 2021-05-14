@@ -2,11 +2,23 @@
     max-width: 70%;
     margin: 10rem auto;
 
+    @include for-tablet-landscape-up {
+        max-width: 95%;
+    }
+
     &__header {
         margin-bottom: 5rem;
 
+        @include for-tablet-portrait-up {
+            margin-bottom: 2rem;
+        }
+
         h1 {
             font-size: 5rem;
+
+            @include for-tablet-portrait-up {
+                font-size: 4.5rem;
+            }
         }
     }
 
@@ -21,9 +33,17 @@
         }
 
         .btn {
-            margin: 50px 0 0;
+            margin-top: 2rem;
             padding: 7px 9px;
             font-size: 2.2rem;
         }
     }
+
+    .footer {
+
+        @include for-tablet-portrait-up {
+            display: flex !important;
+
+        }
+}
 }
