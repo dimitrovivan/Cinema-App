@@ -2,12 +2,20 @@
     max-width: 70%;
     margin: 8rem auto;
 
+    @include for-tablet-portrait-up {
+        margin: 5rem auto;
+    }
+
     &__header {
 
         h1 {
             font-size: 4.7rem;
             margin-bottom: 5rem;
             letter-spacing: 1.5px;
+
+            @include for-tablet-portrait-up {
+                margin-bottom: 3rem;
+            }
         }
     }
 

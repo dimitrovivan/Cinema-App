@@ -854,10 +854,22 @@ input {
   margin: 8rem auto;
 }
 
+@media (max-width: 899px) {
+  .about-page {
+    margin: 5rem auto;
+  }
+}
+
 .about-page__header h1 {
   font-size: 4.7rem;
   margin-bottom: 5rem;
   letter-spacing: 1.5px;
+}
+
+@media (max-width: 899px) {
+  .about-page__header h1 {
+    margin-bottom: 3rem;
+  }
 }
 
 .about-page__description h2 {
