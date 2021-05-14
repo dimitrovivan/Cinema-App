@@ -7,8 +7,24 @@
     width: 100%;
     padding: 20px 50px 0 70px;
 
+   
+
+    @include for-tablet-landscape-up {
+        padding: 20px 30px 0 30px;
+    }
+
+    @include for-phone-only  {
+        position: unset;
+        padding: 0 20px;
+    }
+
     &__description {
         max-width: 40%;
+
+        @include for-tablet-portrait-up {
+            margin-right: 30px;
+
+        }
     }
 
     &__heading {
@@ -19,6 +35,23 @@
     &__list {
         width: 60%;
         justify-content: space-evenly;
+
+        @include for-tablet-landscape-up {
+            width: 80%;
+        }
+
+        @include for-tablet-portrait-up {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 25px;
+
+        }
+
+        @include for-phone-only  {
+            grid-template-columns: 1fr;
+            margin: 20px 0 20px 10px;
+        }
+    
 
         a {
             color: $primary-white;
