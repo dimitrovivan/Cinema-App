@@ -972,6 +972,26 @@ input {
   border-radius: 20px;
 }
 
+@media (max-width: 1199px) {
+  .register-page {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 899px) {
+  .register-page {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 599px) {
+  .register-page {
+    max-width: 90%;
+    padding: 1rem;
+    margin: 5rem auto 4rem;
+  }
+}
+
 .register-page__header h1 {
   margin-bottom: 5rem;
 }
