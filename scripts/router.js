@@ -132,9 +132,10 @@ async function router(path) {
 
     try {
           await currRoute.execute();
-
     } catch(e) {
        showNotification.error("Something went wrong... Please try again");
+    } finally {
+        document.querySelector('body').style.overflowY = "scroll";
     }
 
 }
@@ -146,8 +147,6 @@ const isExistingPath = (path) => route.find( ({ regexPath }) => path.match(regex
 
 
 export function navigate(path) {
-
-    document.querySelector('body').style.overflowY = "scroll";
 
     if(!isExistingPath(path)) path = '/';
 

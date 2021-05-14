@@ -42,8 +42,8 @@ ${headerTemplate(isLogged)}
             </div>
 
             <div class="description-secondary-information">
-                <h4 class="free-seats">Free:</h4>
-                <h4 class="selected-seats">Selected:</h4>
+                <h4 class="free-seats">Empty:</h4>
+                <h4 class="selected-seats">Clicked:</h4>
                 <h4 class="reserved-seats">Reserved:</h4>
             </div>
         </div>

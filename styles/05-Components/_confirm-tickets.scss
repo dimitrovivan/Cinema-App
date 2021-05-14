@@ -8,9 +8,23 @@
     z-index: 2;
     display: none;
 
+    @include for-tablet-portrait-up {
+        width: 100%
+    }
+
+    @include for-phone-only {
+        position: fixed;
+        top: 0;
+        padding: 50px 30px;
+    }
+
     &__heading {
         margin-bottom: 60px;
         font-style: italic;
+
+        @include for-tablet-portrait-up {
+            margin: 40px 0 60px;
+        }
     }
 
     label {
@@ -22,6 +36,10 @@
         margin: 0 0 35px;
         width: 60%;
         height: 30px;
+
+        @include for-tablet-portrait-up {
+            width: 80%
+        }
     }
 
     &__footer {
@@ -31,6 +49,14 @@
             margin: 0 auto;
             padding: 12px 20px;
             width: 12%;
+
+            @include for-tablet-portrait-up {
+                width: 20%
+            }
+
+            @include for-phone-only {
+                width: 30%
+            }
         }
     }
 

@@ -1250,6 +1250,12 @@ input {
   margin: 20px auto 0;
 }
 
+@media (max-width: 899px) {
+  .cinema-hall {
+    max-width: 90%;
+  }
+}
+
 .cinema-hall__header {
   width: 100%;
   margin-bottom: 30px;
@@ -1295,6 +1301,23 @@ input {
           justify-content: space-between;
 }
 
+@media (max-width: 899px) {
+  .cinema-hall__description {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 599px) {
+  .cinema-hall__description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .cinema-hall__description .ticket-price {
   margin-bottom: 30px;
 }
@@ -1320,6 +1343,15 @@ input {
           justify-content: center;
 }
 
+@media (max-width: 599px) {
+  .cinema-hall__description .description-secondary-information {
+    margin: 30px 0;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .cinema-hall__description .free-seats,
 .cinema-hall__description .selected-seats {
   margin-bottom: 30px;
@@ -1330,6 +1362,7 @@ input {
 .cinema-hall__description .reserved-seats {
   position: relative;
   margin-right: 5px;
+  letter-spacing: 1.2px;
 }
 
 .cinema-hall__description .free-seats::after,
@@ -1370,6 +1403,20 @@ input {
           column-gap: 70px;
 }
 
+@media (max-width: 899px) {
+  .cinema-hall__list {
+    -webkit-column-gap: 30px;
+            column-gap: 30px;
+  }
+}
+
+@media (max-width: 599px) {
+  .cinema-hall__list {
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+  }
+}
+
 .cinema-hall__list-item {
   display: block;
   width: 70px;
@@ -1379,6 +1426,18 @@ input {
   border-top-right-radius: 10px;
   -webkit-transform: rotateY(10deg);
           transform: rotateY(10deg);
+}
+
+@media (max-width: 899px) {
+  .cinema-hall__list-item {
+    width: 50px;
+  }
+}
+
+@media (max-width: 599px) {
+  .cinema-hall__list-item {
+    width: 40px;
+  }
 }
 
 .cinema-hall__list-item.selected {
@@ -1406,9 +1465,29 @@ input {
   display: none;
 }
 
+@media (max-width: 899px) {
+  .confirm-tickets {
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  .confirm-tickets {
+    position: fixed;
+    top: 0;
+    padding: 50px 30px;
+  }
+}
+
 .confirm-tickets__heading {
   margin-bottom: 60px;
   font-style: italic;
+}
+
+@media (max-width: 899px) {
+  .confirm-tickets__heading {
+    margin: 40px 0 60px;
+  }
 }
 
 .confirm-tickets label {
@@ -1422,11 +1501,29 @@ input {
   height: 30px;
 }
 
+@media (max-width: 899px) {
+  .confirm-tickets input {
+    width: 80%;
+  }
+}
+
 .confirm-tickets__footer .btn--primary {
   display: block;
   margin: 0 auto;
   padding: 12px 20px;
   width: 12%;
+}
+
+@media (max-width: 899px) {
+  .confirm-tickets__footer .btn--primary {
+    width: 20%;
+  }
+}
+
+@media (max-width: 599px) {
+  .confirm-tickets__footer .btn--primary {
+    width: 30%;
+  }
 }
 
 .confirm-tickets .total-amount-container {
