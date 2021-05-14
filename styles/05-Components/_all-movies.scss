@@ -3,12 +3,24 @@
     
     margin: 20px 20px 0;
     padding-bottom: 50px;
+
+    @include for-tablet-portrait-up {
+        margin: 50px 20px 0;
+    }
     
     .movie-card-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    .movie-card {
+
+    @include for-tablet-portrait-up {
+        max-width: 400px;
+    }
+
+}
 
     &__date {
         margin-top: 20px;
@@ -38,11 +50,13 @@
 
     .cards-wrapper {
         margin-top: 50px;
-
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
         row-gap: 10rem;
+
+        @include for-tablet-portrait-up {
+            grid-template-columns: 1fr;
+        }
 
         & > * {
             justify-self: center;
