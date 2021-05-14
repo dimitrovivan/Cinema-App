@@ -63,3 +63,9 @@ export const request = {
             year
         }
     }
+
+    export function showBurgerMenu() {
+        let burgerMenu = document.querySelector('.burger-menu');
+        burgerMenu.classList.contains('open') ? burgerMenu.classList.remove('open')
+                                              : burgerMenu.classList.add('open');
+    }
