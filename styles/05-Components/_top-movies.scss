@@ -23,6 +23,7 @@
         background-color: $background-black;
         transform: scaleY(0);
         transition: transform 600ms ease-in-out;
+        border-radius: 5px;
        }
 
        &::after {
@@ -41,8 +42,7 @@
 
            &::after,
            &::before {
-              transform: scaleY(1);
-              
+              transform: scaleY(1);              
            }
 
            .streamHours {

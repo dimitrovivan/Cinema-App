@@ -130,7 +130,12 @@ async function router(path) {
 
     let currRoute = route.find( ({ regexPath }) => path.match(regexPath) );
 
-    await currRoute.execute();
+    try {
+          await currRoute.execute();
+
+    } catch(e) {
+       showNotification.error("Something went wrong... Please try again");
+    }
 
 }
 
