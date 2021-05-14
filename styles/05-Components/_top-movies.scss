@@ -4,6 +4,11 @@
     &__heading {
         margin: 0 0 30px 40px;
 
+        @include for-tablet-landscape-up {
+            margin: 0;
+            text-align: center;
+        }
+
         .navLink {
             font-size: 1.8rem;
             color: $primary-red;
@@ -12,6 +17,7 @@
 
     .movie-card-wrapper {
        position: relative;
+       margin: 20px;
 
        &::after,
        &::before {
@@ -68,6 +74,7 @@
     .cards-wrapper {
         display: flex;
         justify-content: space-evenly;
+        flex-flow: row wrap;
 
         .navLink {
             font-size: 1.8rem;

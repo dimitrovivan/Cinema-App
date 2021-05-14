@@ -989,6 +989,13 @@ input {
   margin: 0 0 30px 40px;
 }
 
+@media (max-width: 1199px) {
+  .top-movies__heading {
+    margin: 0;
+    text-align: center;
+  }
+}
+
 .top-movies__heading .navLink {
   font-size: 1.8rem;
   color: #E50914;
@@ -996,6 +1003,7 @@ input {
 
 .top-movies .movie-card-wrapper {
   position: relative;
+  margin: 20px;
 }
 
 .top-movies .movie-card-wrapper::after, .top-movies .movie-card-wrapper::before {
@@ -1060,6 +1068,10 @@ input {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .top-movies .cards-wrapper .navLink {
