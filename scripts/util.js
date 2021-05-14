@@ -65,7 +65,17 @@ export const request = {
     }
 
     export function showBurgerMenu() {
-        let burgerMenu = document.querySelector('.burger-menu');
-        burgerMenu.classList.contains('open') ? burgerMenu.classList.remove('open')
-                                              : burgerMenu.classList.add('open');
+        let burgerMenu = document.querySelector('.burger-menu')
+        let bodyElement = document.querySelector('body');
+
+        if(burgerMenu.classList.contains('open')) {
+            
+            burgerMenu.classList.remove('open');
+            bodyElement.style.overflowY = "scroll";
+        }
+        else {
+            burgerMenu.classList.add('open');
+            bodyElement.style.overflowY = "hidden";
+        }
+
     }
