@@ -2,6 +2,7 @@ import { rootRender } from "./templateServices.js";
 import { request, getDateInfo } from "./util.js";
 import { showNotification } from "./notifications.js";
 
+//TODO:: we can bind rootRender with isLogged argument because it is passed always
 
 const route = [
     {
@@ -114,9 +115,25 @@ const route = [
             
             let moviesData = {};
 
-            if(data)  Object.keys(data)
-                          .slice(0, 3)
-                          .forEach( movieId => {moviesData[movieId] = data[movieId]})
+            // Sort by reserved seats, slice the first 3 and push information for them in moviesData
+
+            Object.keys(data).sort( (a ,b) => {
+
+                let aReservedSeats = 0;
+                let bReservedSeats = 0;
+
+                Object
+                     .values(data[a].streams)
+                     .forEach(streamSeats => {aReservedSeats += streamSeats.reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0)})
+
+                Object
+                     .values(data[b].streams)
+                     .forEach(streamSeats => {bReservedSeats += streamSeats.reduce( (acc, x) =>  x == "reserved" ? acc+=1 : acc, 0)})
+
+                     console.log(aReservedSeats, bReservedSeats);
+                return bReservedSeats - aReservedSeats;
+            }).slice(0, 3)
+              .forEach( movieId => {moviesData[movieId] = data[movieId]})
 
             return rootRender('topMovies', {isLogged, moviesData});
         }
