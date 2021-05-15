@@ -1,6 +1,5 @@
 import { showNotification } from "./notifications.js";
-import { navigate } from "./router.js";
-import { addToLocalStorage, handleError, clearInputs, request} from "./util.js";
+import { addToLocalStorage, handleError, clearInputs, request, redirect} from "./util.js";
 
 const endpoints = {
     register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
@@ -99,7 +98,7 @@ export async function register() {
         return handleError(data.error.message);
 
     }
-    navigate('/login');
+    redirect('/login');
 
     return showNotification.success("Successfully registrated");
 
@@ -143,7 +142,7 @@ export async function login() {
             navigatePath = previousLoc;
         }
     
-        navigate(navigatePath);
+        redirect(navigatePath);
         
         return showNotification.success("Logged in");
     

@@ -1,6 +1,5 @@
 import { showNotification } from './notifications.js';
-import { navigate } from './router.js';
-import { request } from './util.js';
+import { request, redirect } from './util.js';
 
 export function listenForSeatClickAndChangeState(e) {
 
@@ -61,8 +60,8 @@ export async function payForTickets() {
 
     if(!patchResponse.ok) return showNotification.error("Something went wrong... Please try again");
 
-    navigate('/');
-
+    redirect('/');
+    
     return showNotification.success(`Successfully bought ${selectedSeats.length} ${selectedSeats.length > 1 ? "tickets" : "ticket"}!`)
 
 }
