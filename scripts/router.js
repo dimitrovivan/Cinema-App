@@ -113,7 +113,8 @@ const route = [
 ]
 
 async function router(path) {
-
+    
+    document.querySelector('body').style.overflowY = "scroll";
     let currRoute = route.find(({ regexPath }) => path.match(regexPath));
 
     try {
