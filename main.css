@@ -467,7 +467,7 @@ input {
   position: fixed;
   z-index: 999;
   top: -200px;
-  left: 25%;
+  left: 35%;
   -webkit-transition: -webkit-transform .6s ease-in-out;
   transition: -webkit-transform .6s ease-in-out;
   transition: transform .6s ease-in-out;
@@ -486,6 +486,7 @@ input {
 @media (max-width: 599px) {
   .notification-container {
     width: 50%;
+    left: 30%;
   }
 }
 

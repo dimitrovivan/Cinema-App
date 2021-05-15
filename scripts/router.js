@@ -84,10 +84,6 @@ const route = [
                 
                 localStorage.removeItem('isLogged');
 
-                let burgerMenu = document.querySelector('.burger-menu')
-                
-                if(burgerMenu.classList.contains('.open')) burgerMenu.classList.remove('.open');
-
                 rootRender('home');
 
                 return showNotification.success("Logged out");

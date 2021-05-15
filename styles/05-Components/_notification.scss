@@ -2,7 +2,7 @@
    position: fixed;
    z-index: 999;
    top: -200px;
-   left: 25%;
+   left: 35%;
    transition: transform .6s ease-in-out;
    background-color: rgb(65, 62, 62);
    width: 30%;
@@ -16,6 +16,7 @@
 
     @include for-phone-only {
         width: 50%;
+        left: 30%;
     }
 
    &::before {
