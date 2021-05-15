@@ -33,11 +33,9 @@ export async function payForTickets() {
     
     let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
 
-    let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
+    let data = await getMovieById(movieId);
 
-    let getResponse = await  request.get(movieURL);
-
-    let data = await getResponse.json();
+    if(data == {}) return;
 
     let allStreams = data.streams;
 
@@ -54,7 +52,9 @@ export async function payForTickets() {
        
     });
 
-    let patchBody = {  streams: changedStreams }
+    let patchBody = {  streams: changedStreams };
+
+    let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
 
     let patchResponse = await request.patch(movieURL, patchBody);
 
@@ -87,5 +87,40 @@ function validatePayCredentials() {
     }
 
     return true;
+
+}
+
+// return either object with movie data or empty object
+export async function getAllMovies() {
+
+    try {
+    let response = await request.get('https://cinema-app-7733d-default-rtdb.firebaseio.com/movies.json');
+    let moviesData = await response.json();
+    return moviesData;
+
+    } catch(e) {
+        showNotification.error('Something went wrong... Please try again');
+        return {};
+    }
+
+}
+
+
+// return either object with movie data or empty object
+export async function getMovieById(movieId) {
+
+    let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
+
+    try {
+        let getResponse = await  request.get(movieURL);
+    
+        let data = await getResponse.json();
+
+        return data;
+
+    } catch(e) {
+        showNotification.error('Something went wrong... Please try again');
+        return {};
+    }
 
 }
