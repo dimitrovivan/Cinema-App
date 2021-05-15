@@ -2,7 +2,7 @@
     position: relative;
     z-index: -998;
     min-height: 100vh;
-    background: url('/images/background-catalog.jpg');
+    background: url("/images/background-catalog.jpg");
 
     &::after {
         content: "";

@@ -7,7 +7,7 @@ export function addToLocalStorage(name, value) {
 export function handleError(errorMessage) {
 
     switch (errorMessage) {
-
+        
         case "OPERATION_NOT_ALLOWED":
         case "PASSWORD_LOGIN_DISABLED": return showNotification.error("Service may be unavaiable.. Please try again later");
         case "EMAIL_EXISTS": return showNotification.error("Email already exists");
@@ -25,11 +25,9 @@ export function clearInputs(...selectors) {
     selectors.forEach(selector => {
 
         let currElement = document.querySelector(selector);
-
         if (currElement) return currElement.value = '';
 
-        return console.log('wrong selector');
-
+        return 'wrong selector';
     })
 }
 
@@ -38,25 +36,30 @@ export const request = {
     post: async (url, body) => {
 
         try {
-
             return await fetch(url, {
                 method: "POST",
                 body: JSON.stringify(body),
                 returnSecureToken: true
             })
-
         }
-        catch (e) {
+        catch(e) {
             showNotification.error("Weak connection, please try again");
         }
     },
 
     get: async (url) => await fetch(url),
 
-    patch: async (url, body) => await fetch(url, {
-        method: "PATCH",
-        body: JSON.stringify(body)
-    })
+    patch: async (url, body) => {
+
+      try {
+         return await fetch(url, {
+              method: "PATCH",
+              body: JSON.stringify(body)
+        })
+    } catch(e) {
+        showNotification.error("Weak connection, please try again");
+    }
+  }
 
 }
 
@@ -76,8 +79,6 @@ export function getDateInfo() {
 
 export function redirect(path) {
     history.pushState({}, '', path);
-
     let customPopstate = new CustomEvent("popstate");
-
     window.dispatchEvent(customPopstate);
 }

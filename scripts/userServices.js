@@ -1,5 +1,5 @@
 import { showNotification } from "./notifications.js";
-import { addToLocalStorage, handleError, clearInputs, request, redirect} from "./util.js";
+import { addToLocalStorage, handleError, clearInputs, request, redirect } from "./util.js";
 
 const endpoints = {
     register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
@@ -10,17 +10,17 @@ const validateCredentials = {
 
     register: (email, password, repPassword) => {
 
-        if(!checkForTruthyInputs(email, password, repPassword)) {
+        if (!checkForTruthyInputs(email, password, repPassword)) {
             showNotification.error("You must fill all fields");
             return false;
         }
 
-        if(!checkForSpecificLength(password, 6)) {
+        if (!checkForSpecificLength(password, 6)) {
             showNotification.error("Your password must be at least 6 symbols");
             return false;
         }
 
-        if(password !== repPassword) {
+        if (password !== repPassword) {
             showNotification.error("Password missmatch");
             return false;
         }
@@ -29,13 +29,13 @@ const validateCredentials = {
     },
 
     login: (email, password) => {
-               
-        if(!checkForTruthyInputs(email, password)) {
+
+        if (!checkForTruthyInputs(email, password)) {
             showNotification.error("You must fill all fields");
             return false;
         }
 
-        if(!checkForSpecificLength(password, 6)) {
+        if (!checkForSpecificLength(password, 6)) {
             showNotification.error("Your password must be at least 6 symbols");
             return false;
         }
@@ -59,12 +59,10 @@ function getInputDataFromForm(formElement) {
 
 function checkForSpecificLength(item, wantedLength) {
 
-    if(typeof item == "object" || typeof item == "array") return false;
-
-    if(item.length >= wantedLength) return true;
+    if (typeof item == "object" || typeof item == "array") return false;
+    if (item.length >= wantedLength) return true;
 
     return false;
-
 }
 
 function checkForTruthyInputs(...items) {
@@ -72,82 +70,62 @@ function checkForTruthyInputs(...items) {
     let result = true;
 
     items.forEach(item => {
-        
-        if(!item) result = false;
-    })
 
+        if (!item) result = false;
+    })
     return result;
 }
 
 export async function register() {
 
     let registerForm = document.querySelector('.registerForm');
-
     let { email, password, repPassword } = getInputDataFromForm(registerForm);
-
-    if(!validateCredentials.register(email, password, repPassword)) return;
+    if (!validateCredentials.register(email, password, repPassword)) return;
 
     try {
+        let response = await request.post(endpoints.register, { email, password });
 
-    let response = await request.post(endpoints.register, {email, password});
+        if (!response.ok) {
+            let data = await response.json();
+            return handleError(data.error.message);
+        }
 
+        redirect('/login');
+        return showNotification.success("Successfully registrated");
 
-    if(!response.ok) {
-        let data = await response.json();
-
-        return handleError(data.error.message);
-
-    }
-    redirect('/login');
-
-    return showNotification.success("Successfully registrated");
-
-    } catch(error) {
-
-    }
-
+    } catch (error) {}
 }
 
 export async function login() {
 
     let loginForm = document.querySelector('.loginForm');
-
     let { email, password } = getInputDataFromForm(loginForm);
-
-    if(!validateCredentials.login(email, password)) return;
+    if (!validateCredentials.login(email, password)) return;
 
     try {
 
-    let response = await request.post(endpoints.login, {email, password});
+        let response = await request.post(endpoints.login, { email, password });
 
-    if(!response.ok) {
+        if (!response.ok) {
+            let data = await response.json();
 
-        let data = await response.json();
+            clearInputs(".login-email", ".login-password");
+            return handleError(data.error.message);
+        }
 
-        clearInputs(".login-email", ".login-password");
-
-        return handleError(data.error.message);
-
-    }
-    
-    let navigatePath = '/';
-    addToLocalStorage('isLogged', true);
+        let navigatePath = '/';
+        addToLocalStorage('isLogged', true);
 
         let previousLoc = location.pathname;
-    
         let firstPartOfPath = previousLoc.split('/').filter(res => res != "")[0];
-    
-        if(firstPartOfPath == 'all-movies') {
+
+        if (firstPartOfPath == 'all-movies') {
             history.replaceState({}, '', previousLoc);
             navigatePath = previousLoc;
         }
-    
+
         redirect(navigatePath);
-        
         return showNotification.success("Logged in");
-    
-    } catch(error) {
-    
-        }
-    
+
+    } catch (error) {}
 }

@@ -1,6 +1,5 @@
 const notificationElement = document.querySelector('.notification-container');
 
-
 export const showNotification = {
 
     error: (message) => {

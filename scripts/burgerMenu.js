@@ -5,12 +5,10 @@ export function toggleBurgerMenu() {
     let burgerMenu = getBurgerMenu();
     let bodyElement = document.querySelector('body');
 
-    if(burgerMenu.classList.contains('open')) {
-        
+    if (burgerMenu.classList.contains('open')) {
         burgerMenu.classList.remove('open');
         bodyElement.style.overflowY = "scroll";
-    }
-    else {
+    } else {
         burgerMenu.classList.add('open');
         bodyElement.style.overflowY = "hidden";
     }

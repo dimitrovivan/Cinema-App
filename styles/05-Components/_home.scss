@@ -23,7 +23,7 @@
     }
 
     &__body {
-
+        
         .check-out-section {
             align-items: center;
         }
@@ -40,10 +40,8 @@
     }
 
     .footer {
-
         @include for-tablet-portrait-up {
             display: flex !important;
-
         }
-}
+    }
 }

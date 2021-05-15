@@ -14,11 +14,9 @@
         max-width: 90%;
         margin: 5rem auto 6rem;
         padding: 1rem;
-
     }
 
     &__header {
-        
         h1 {
             margin-bottom: 5rem;
         }
@@ -27,7 +25,8 @@
     &__footer {
         margin-top: 5rem;
 
-        span, a {
+        span,
+        a {
             font-size: 2rem;
         }
 
@@ -38,7 +37,7 @@
         }
 
         a {
-            color: $primary-white;            
+            color: $primary-white;
             animation: booping 1.5s infinite alternate;
         }
     }

@@ -3,8 +3,6 @@
     justify-content: space-between;
     align-items: center;
 
-    
-
     @include for-tablet-portrait-up {
         padding: 20px 20px 0;
     }
@@ -17,7 +15,6 @@
         }
 
         @include for-tablet-portrait-up {
-            
             & > * ~ * {
                 margin-left: 3rem;
             }
@@ -30,53 +27,49 @@
         &-item {
             @include for-phone-only {
                 transform: translate(-250px, 250px);
-                animation: reveal .4s ease-in-out forwards
+                animation: reveal 0.4s ease-in-out forwards;
             }
         }
-
     }
 
     .burger-menu.open {
-
         @include for-phone-only {
+            ~ .header__list {
+                position: absolute;
+                z-index: 998;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                padding: 30px 0 0 30px;
+                @include animation-delay-children("li");
 
-        ~.header__list {
-            position: absolute;
-            z-index: 998;
-            top: 0;
-            left: 0;
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            flex-direction: column;
-            padding: 30px 0 0 30px;
-            @include animation-delay-children('li');
+                & > * ~ * {
+                    margin: 5rem 0 0;
+                }
 
-            & > * ~ * {
-                margin: 5rem 0 0;
-            }
-
-            a {
-                font-size: 1.8rem;
-
-                &.btn {
-                   margin: 0;
+                a {
+                    font-size: 1.8rem;
+                    
+                    &.btn {
+                        margin: 0;
+                    }
                 }
             }
-            
         }
     }
-}
 
     &__link {
         position: relative;
         color: $primary-white;
         font-size: 1.6rem;
-        transition: all .5s ease-in-out;
+        transition: all 0.5s ease-in-out;
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             left: 0px;
             top: 23px;
@@ -89,7 +82,6 @@
         }
 
         &:hover {
-
             &::after {
                 transform: scaleX(1);
             }

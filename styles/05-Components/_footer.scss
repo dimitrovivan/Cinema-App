@@ -7,13 +7,11 @@
     width: 100%;
     padding: 20px 50px 0 70px;
 
-   
-
     @include for-tablet-landscape-up {
         padding: 20px 30px 0 30px;
     }
 
-    @include for-phone-only  {
+    @include for-phone-only {
         position: unset;
         padding: 0 20px;
     }
@@ -23,7 +21,6 @@
 
         @include for-tablet-portrait-up {
             margin-right: 30px;
-
         }
     }
 
@@ -44,14 +41,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             row-gap: 25px;
-
         }
 
-        @include for-phone-only  {
+        @include for-phone-only {
             grid-template-columns: 1fr;
             margin: 20px 0 20px 10px;
         }
-    
 
         a {
             color: $primary-white;
@@ -69,30 +64,28 @@
 
         .phone-contact {
             &::before {
-                content: '\f879';
+                content: "\f879";
             }
         }
 
         .facebook {
             &::before {
-                content: '\f39e';
+                content: "\f39e";
             }
         }
 
         .instagram {
             &::before {
-                content: '\f16d';
+                content: "\f16d";
             }
         }
 
         .mail {
-
             margin-right: 0;
-            
+
             &::before {
-                content: '\f0e0';
+                content: "\f0e0";
             }
         }
     }
-
 }

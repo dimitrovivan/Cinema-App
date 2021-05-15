@@ -1,13 +1,11 @@
 .all-movies {
-
-    
     margin: 20px 20px 0;
     padding-bottom: 50px;
 
     @include for-tablet-portrait-up {
         margin: 50px 20px 0;
     }
-    
+
     .movie-card-wrapper {
         display: flex;
         flex-direction: column;
@@ -15,12 +13,10 @@
     }
 
     .movie-card {
-
-    @include for-tablet-portrait-up {
-        max-width: 400px;
+        @include for-tablet-portrait-up {
+            max-width: 400px;
+        }
     }
-
-}
 
     &__date {
         margin-top: 20px;
@@ -34,7 +30,6 @@
     }
 
     .streamHours {
-
         margin-top: 30px;
 
         .btn--primary {
@@ -46,7 +41,6 @@
             margin-left: 40px;
         }
     }
-
 
     .cards-wrapper {
         margin-top: 50px;
@@ -61,7 +55,5 @@
         & > * {
             justify-self: center;
         }
-        
     }
-
 }

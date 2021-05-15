@@ -1,19 +1,18 @@
 .btn {
     text-align: center;
     color: $primary-white;
-    border:none;
+    border: none;
     border-radius: 3px;
     display: inline-block;
 
     &--primary {
         background-color: $primary-red;
         padding: 10px 20px;
-    
+
         &:hover {
             box-shadow: 0px 3px 10px 2px black;
         }
     }
-
 
     &--back {
         border: 3px solid $primary-red;
@@ -26,6 +25,4 @@
         padding: 15px 30px;
         margin-left: 20px;
     }
-
 }
-

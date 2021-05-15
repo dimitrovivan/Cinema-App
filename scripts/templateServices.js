@@ -14,11 +14,9 @@ import topMovies from '../templates/topMovies.js';
 import cinemaHall from '../templates/cinema-hall.js';
 import allMovies from '../templates/allMovies.js';
 
-
 const rootElement = document.querySelector('.root');
 
 const templates = {header, footer, about, home, login, register, topMovies, allMovies, cinemaHall};
-
 const getTemplate = (templateName, context) => templates[templateName](context);
 
 export const rootRender = (templateName, context = {}) => {

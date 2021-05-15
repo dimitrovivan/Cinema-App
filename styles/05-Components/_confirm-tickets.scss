@@ -9,7 +9,7 @@
     display: none;
 
     @include for-tablet-portrait-up {
-        width: 100%
+        width: 100%;
     }
 
     @include for-phone-only {
@@ -38,12 +38,11 @@
         height: 30px;
 
         @include for-tablet-portrait-up {
-            width: 80%
+            width: 80%;
         }
     }
 
     &__footer {
-        
         .btn--primary {
             display: block;
             margin: 0 auto;
@@ -51,11 +50,11 @@
             width: 12%;
 
             @include for-tablet-portrait-up {
-                width: 20%
+                width: 20%;
             }
 
             @include for-phone-only {
-                width: 30%
+                width: 30%;
             }
         }
     }
