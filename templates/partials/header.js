@@ -1,11 +1,11 @@
 import { html } from 'https://unpkg.com/lit-html?module';
-import { showBurgerMenu } from '../../scripts/util.js'
+import { toggleBurgerMenu } from '../../scripts/burgerMenu.js'
 
 export default (isLogged) => html`
 <header class="header flex--row">
                 <div><a href="/" class="logo navLink">RxoN</a></div>
                 <nav class="header__navigation">
-                  <div class="burger-menu" @click=${showBurgerMenu}>
+                  <div class="burger-menu" @click=${toggleBurgerMenu}>
                       <div class="burger-menu__icon"></div>
                   </div>
                     <ul class="header__list flex--row">

@@ -73,19 +73,3 @@ export const request = {
             year
         }
     }
-
-    export function showBurgerMenu() {
-        let burgerMenu = document.querySelector('.burger-menu')
-        let bodyElement = document.querySelector('body');
-
-        if(burgerMenu.classList.contains('open')) {
-            
-            burgerMenu.classList.remove('open');
-            bodyElement.style.overflowY = "scroll";
-        }
-        else {
-            burgerMenu.classList.add('open');
-            bodyElement.style.overflowY = "hidden";
-        }
-
-    }

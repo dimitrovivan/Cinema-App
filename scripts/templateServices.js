@@ -22,7 +22,6 @@ const templates = {header, footer, about, home, login, register, topMovies, allM
 const getTemplate = (templateName, context) => templates[templateName](context);
 
 export const rootRender = (templateName, context = {}) => {
-
     let isLogged = localStorage.getItem('isLogged');
-    return render(getTemplate(templateName, {...context, isLogged }), rootElement);
+    render(getTemplate(templateName, {...context, isLogged }), rootElement);
 }
