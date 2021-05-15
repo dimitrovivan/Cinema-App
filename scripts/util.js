@@ -82,3 +82,13 @@ export function redirect(path) {
     let customPopstate = new CustomEvent("popstate");
     window.dispatchEvent(customPopstate);
 }
+
+export function toggleBodyOverflowY() {
+    let bodyElement = document.querySelector('body');
+
+    if(bodyElement.style.overflowY == "hidden") {
+        bodyElement.style.overflowY = "scroll"
+    } else {
+        bodyElement.style.overflowY = "hidden"
+    }
+}

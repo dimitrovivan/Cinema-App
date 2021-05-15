@@ -120,8 +120,6 @@ async function router(path) {
         await currRoute.execute();
     } catch (e) {
         showNotification.error("Something went wrong... Please try again");
-    } finally {
-        document.querySelector('body').style.overflowY = "scroll";
     }
 }
 

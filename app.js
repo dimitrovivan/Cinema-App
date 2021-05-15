@@ -19,6 +19,7 @@ function navigateOnClick(e) {
     else if (target.tagName == "A" && target.classList.contains('navLink')) path = new URL(target.href).pathname;
     else return;
 
+    document.querySelector('body').style.overflowY = "scroll";
     if (path == location.pathname) return hideBurgerMenu();
 
     navigate(path);

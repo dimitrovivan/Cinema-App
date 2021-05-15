@@ -468,10 +468,10 @@ input {
   z-index: 999;
   top: -200px;
   left: 35%;
-  -webkit-transition: -webkit-transform .6s ease-in-out;
-  transition: -webkit-transform .6s ease-in-out;
-  transition: transform .6s ease-in-out;
-  transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
   background-color: #413e3e;
   width: 30%;
   padding: 20px;
@@ -491,7 +491,7 @@ input {
 }
 
 .notification-container::before {
-  content: '';
+  content: "";
   width: 5px;
   height: 200px;
   position: absolute;
@@ -613,14 +613,14 @@ input {
   .header__list-item {
     -webkit-transform: translate(-250px, 250px);
             transform: translate(-250px, 250px);
-    -webkit-animation: reveal .4s ease-in-out forwards;
-            animation: reveal .4s ease-in-out forwards;
+    -webkit-animation: reveal 0.4s ease-in-out forwards;
+            animation: reveal 0.4s ease-in-out forwards;
   }
 }
 
 @media (max-width: 599px) {
   .header .burger-menu.open ~ .header__list {
-    position: absolute;
+    position: fixed;
     z-index: 998;
     top: 0;
     left: 0;
@@ -665,12 +665,12 @@ input {
   position: relative;
   color: #e2e2e2;
   font-size: 1.6rem;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .header__link::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0px;
   top: 23px;
@@ -782,15 +782,15 @@ input {
 }
 
 .footer__list .phone-contact::before {
-  content: '\f879';
+  content: "\f879";
 }
 
 .footer__list .facebook::before {
-  content: '\f39e';
+  content: "\f39e";
 }
 
 .footer__list .instagram::before {
-  content: '\f16d';
+  content: "\f16d";
 }
 
 .footer__list .mail {
@@ -798,7 +798,7 @@ input {
 }
 
 .footer__list .mail::before {
-  content: '\f0e0';
+  content: "\f0e0";
 }
 
 .home-page {
@@ -955,7 +955,8 @@ input {
   margin-top: 5rem;
 }
 
-.login-page__footer span, .login-page__footer a {
+.login-page__footer span,
+.login-page__footer a {
   font-size: 2rem;
 }
 
@@ -1007,7 +1008,8 @@ input {
   margin-top: 5rem;
 }
 
-.register-page__footer span, .register-page__footer a {
+.register-page__footer span,
+.register-page__footer a {
   font-size: 2rem;
 }
 
@@ -1049,7 +1051,7 @@ input {
 }
 
 .top-movies .movie-card-wrapper::after, .top-movies .movie-card-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 50%;
@@ -1274,13 +1276,13 @@ input {
   margin: 0 auto;
   height: 150px;
   background-color: black;
-  -webkit-box-shadow: 0px 0px .2px .2px white inset;
-          box-shadow: 0px 0px .2px .2px white inset;
+  -webkit-box-shadow: 0px 0px 0.2px 0.2px white inset;
+          box-shadow: 0px 0px 0.2px 0.2px white inset;
   border-radius: 2px;
 }
 
 .cinema-hall__header .screen::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 70%;
   height: 10px;
@@ -1375,7 +1377,7 @@ input {
 .cinema-hall__description .free-seats::after,
 .cinema-hall__description .selected-seats::after,
 .cinema-hall__description .reserved-seats::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 40px;
   height: 30px;
@@ -1555,6 +1557,10 @@ input {
   cursor: pointer;
 }
 
+.burger-menu.open {
+  position: fixed;
+}
+
 .burger-menu.open .burger-menu__icon,
 .burger-menu.open .burger-menu__icon::before,
 .burger-menu.open .burger-menu__icon::after {
@@ -1589,20 +1595,20 @@ input {
   height: 2.5px;
   background-color: white;
   border-radius: 5px;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .burger-menu__icon::before, .burger-menu__icon::after {
-  content: '';
+  content: "";
   position: relative;
   display: block;
   width: 35px;
   height: 4px;
   right: 1.5px;
   background-color: white;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .burger-menu__icon::before {

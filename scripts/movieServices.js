@@ -1,5 +1,5 @@
 import { showNotification } from './notifications.js';
-import { request, redirect } from './util.js';
+import { request, redirect, toggleBodyOverflowY } from './util.js';
 
 export function listenForSeatClickAndChangeState(e) {
 
@@ -16,7 +16,7 @@ export function showAndSubmitConfirmForm() {
 
     let confirmSection = document.querySelector('.confirm-tickets');
 
-    document.querySelector('body').style.overflowY = "hidden";
+    toggleBodyOverflowY();
     document.querySelector('.total-amount-container').textContent = `Total amount: ${(selectedSeats.length * 6.99).toFixed(2)}$`
     confirmSection.style.display = "block";
 
@@ -58,7 +58,7 @@ const getSelectedSeats = () => Array.from(document.querySelectorAll('.cinema-hal
 
 
 export const hideConfirmFormOnClick = () => {
-    document.querySelector('body').style.overflowY = "scroll";
+    toggleBodyOverflowY();
     document.querySelector('.confirm-tickets').style.display = "none";
 }
 

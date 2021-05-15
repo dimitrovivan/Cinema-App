@@ -13,6 +13,8 @@
     }
 
     &.open {
+    position: fixed;
+
         .burger-menu__icon,
         .burger-menu__icon::before,
         .burger-menu__icon::after {

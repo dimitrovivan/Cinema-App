@@ -35,7 +35,7 @@
     .burger-menu.open {
         @include for-phone-only {
             ~ .header__list {
-                position: absolute;
+                position: fixed;
                 z-index: 998;
                 top: 0;
                 left: 0;
