@@ -2,7 +2,7 @@
 Templating service for importing lit-html, and my template views
 */
 
-import {render} from 'https://unpkg.com/lit-html?module';
+import { render } from '../../node_modules/lit-html/lit-html.js'
 
 import header from '../templates/partials/header.js';
 import footer from '../templates/partials/footer.js';

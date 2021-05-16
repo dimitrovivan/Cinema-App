@@ -1,4 +1,4 @@
-import { html } from 'https://unpkg.com/lit-html?module';
+import { html } from '../../node_modules/lit-html/lit-html.js'
 import { toggleBurgerMenu } from '../../scripts/burgerMenu.js'
 
 export default (isLogged) => html`

@@ -1,0 +1,25 @@
+{
+  "name": "Cinema-App",
+  "version": "1.0.0",
+  "description": "Cinema SPA | Technical University of Varna | Exam",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitrovivan/Cinema-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimitrovivan/Cinema-App/issues"
+  },
+  "homepage": "https://github.com/dimitrovivan/Cinema-App#readme",
+  "dependencies": {
+    "lit-html": "^1.4.1",
+    "lite-server": "^2.6.1"
+  }
+}

@@ -32,19 +32,9 @@ The design is made and implemented by me. It's responsive and dekstop-first.
    2. If you try to reach for example http://localhost:3000/all-movies/someid you will receive error, because lite-server considers someid for file and it is searching for it.    But you can reach with single recourses easily.
  
 ## How to set up:
-1. Open terminal in root folder and type npm init -y
+1. Open terminal in root folder and type npm install
 
-2. Type npm install --save lite-server
-
-3. Then, go to package.json, in scripts object add:   
-"start": "lite-server"
-
---Don't forget comma.--
---Example: 
-"start": "lite-server",
-"test": "echo \"Error: no test specified\" && exit 1"
-
-4. Finnaly type in terminal npm start
+2. Type in terminal npm start
 
 ## Tech stack:
 HTML5, CSS3, Javascript, Lit-html, Firebase
