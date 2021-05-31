@@ -29,7 +29,6 @@ The design is made and implemented by me. It's responsive and dekstop-first.
   ####  Disdisadvantages:
    1. If you try to login when i have turned of Firebase authentication you will receive error "Failed to fetch", due to security reasons in Firebase. And after the second time    you try, or 1-3s it will be turned on automatically and you will be able to log in. It is same for register.
 
-   2. If you try to reach for example http://localhost:3000/all-movies/someid you will receive error, because lite-server considers someid for file and it is searching for it.    But you can reach with single recourses easily.
  
 ## How to set up:
 1. Open terminal in root folder and type npm install
