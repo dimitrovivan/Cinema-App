@@ -974,7 +974,7 @@ input {
 
 .register-page {
   max-width: 50%;
-  margin: 5rem auto 0;
+  margin: 3rem auto 0;
   padding: 2rem;
   background-color: rgba(14, 13, 13, 0.8);
   border-radius: 20px;
@@ -1005,7 +1005,7 @@ input {
 }
 
 .register-page__footer {
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
 .register-page__footer span,
