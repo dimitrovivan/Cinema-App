@@ -30,5 +30,5 @@ ${headerTemplate(isLogged)}
                     <div><span>Already signed up ?</span><a href="/login" class="navLink">Sign in directly</a></div>
                 </div>
             </div>
-${footerTemplate()};
+${footerTemplate()}
 `
