@@ -35,6 +35,7 @@ export async function payForTickets() {
     let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
     
     let data = await getMovieById(movieId);
+    
     if (data == {}) return;
     let allStreams = data.streams;
     let chosenStream = allStreams[streamHour];
