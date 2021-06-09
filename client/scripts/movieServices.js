@@ -100,7 +100,6 @@ export async function getAllMovies() {
 export async function getMovieById(movieId) {
 
     let movieURL = `${endpoints.movieById}/${movieId}`;
-
     try {
         let getResponse = await request.get(movieURL);
         let data = await getResponse.json();

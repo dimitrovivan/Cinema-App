@@ -38,7 +38,7 @@ const route = [
     },
 
     {
-        regexPath: /^\/all-movies\/-.*\/[\d]{2}:[\d]{2}$/,
+        regexPath: /^\/all-movies\/.*\/[\d]{2}:[\d]{2}$/,
         execute: async () => {
 
             let isLogged = localStorage.getItem('isLogged');

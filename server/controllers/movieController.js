@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { getAllMovies } = require('../services/movieServices');
+const { getAllMovies, getMovieById } = require('../services/movieServices');
 router.get('/all', async (req, res, next) => {
     try {
        let allMovies = await getAllMovies();
@@ -8,6 +8,17 @@ router.get('/all', async (req, res, next) => {
     } catch(error) {
       next(error);
     }
+});
+
+router.get('/:id', async (req, res, next) => {
+ 
+  try {
+     let currMovie = await getMovieById(req.params.id);
+     console.log(currMovie);
+     res.status(200).json(currMovie);
+  } catch(error) {
+    next(error);
+  }
 });
 
 
