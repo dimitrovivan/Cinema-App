@@ -31,9 +31,9 @@ The design is made and implemented by me. It's responsive and dekstop-first.
 
  
 ## How to set up:
-1. Open terminal in root folder and type npm install
+1. Open terminal in client and server folder and type npm install
 
-2. Type in terminal npm start
+2. Type npm start in client and server folder.
 
 ## Tech stack:
 HTML5, CSS3, Javascript, Lit-html, Firebase
