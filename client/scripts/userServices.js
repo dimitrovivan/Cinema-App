@@ -1,9 +1,11 @@
 import { showNotification } from "./notifications.js";
 import { addToLocalStorage, handleError, clearInputs, request, redirect } from "./util.js";
 
+const origin = 'http://localhost:5000';
+const authResource = '/auth';
 const endpoints = {
-    register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
-    login: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`
+    register: `${origin}${authResource}/register`,
+    login: `${origin}${authResource}/login`
 }
 
 const validateCredentials = {
@@ -84,7 +86,7 @@ export async function register() {
 
     try {
         let response = await request.post(endpoints.register, { email, password });
-
+        
         if (!response.ok) {
             let data = await response.json();
             return handleError(data.error.message);

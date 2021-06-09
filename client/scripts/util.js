@@ -38,12 +38,14 @@ export const request = {
         try {
             return await fetch(url, {
                 method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
                 body: JSON.stringify(body),
-                returnSecureToken: true
             })
         }
         catch(e) {
-            showNotification.error("Weak connection, please try again");
+            showNotification.error("Weak connectionaa, please try again");
         }
     },
 
@@ -54,6 +56,9 @@ export const request = {
       try {
          return await fetch(url, {
               method: "PATCH",
+              headers: {
+                'Content-Type': 'application/json'
+              },
               body: JSON.stringify(body)
         })
     } catch(e) {

@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
-const cors = require('./middlewares/cors');
-const { PORT } = require('./config/base');
-app.use(cors);
 
-app.get('/test', ( req, res) => {
-    res.json({asd: 123});
-})
+const { PORT } = require('./config/base');
+const router = require('./router');
+
+require('./config/express')(app);
+app.use(router);
 
 app.listen(PORT, console.log(`Server listenning on port ${PORT}...`));
