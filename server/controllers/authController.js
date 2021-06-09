@@ -5,11 +5,14 @@ router.post('/register', async (req, res, next) => {
 
     try {
        validateRegisterCredentials(email, password, repPassword);
-       //register user
        await register(email, password);
        res.status(201).end();
     } catch(error) {
-        next(error);
+      if (error.code == 11000) {
+        error.message = "Email has already been taken";
+        error.status = 400;
+      }
+      next(error);
     }
 });
 

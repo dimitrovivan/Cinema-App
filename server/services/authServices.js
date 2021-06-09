@@ -1,3 +1,5 @@
+const User = require('../models/User');
+
 function validateRegisterCredentials(email, password, repPassword) {
     
     if(!email || !password || !repPassword) throw {status: 400 , message: "You must fill all inputs"};
@@ -12,7 +14,8 @@ function validateRegisterCredentials(email, password, repPassword) {
 }
 
 function register(email, password) {
-    
+     let user = User({email: email.toLowerCase(), password});
+     return user.save();
 }
 
 module.exports = {
