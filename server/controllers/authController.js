@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { validateRegisterCredentials, register } = require('../services/authServices');
+const { validateRegisterCredentials, register, validateLoginCredentials, login } = require('../services/authServices');
+const { COOKIE_NAME } = require('../config/security')
+
 router.post('/register', async (req, res, next) => {
     let { email, password, repPassword } = req.body;
 
@@ -14,6 +16,19 @@ router.post('/register', async (req, res, next) => {
       }
       next(error);
     }
+});
+
+router.post('/login', async (req, res, next) => {
+  let { email, password } = req.body;
+
+  try {
+     let userId = await validateLoginCredentials(email, password);
+     let token = await login(userId);
+     res.status(200).json({token});
+     
+  } catch(error) {
+    next(error);
+  }
 });
 
 module.exports = router;

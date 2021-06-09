@@ -108,18 +108,18 @@ export async function login() {
     try {
 
         let response = await request.post(endpoints.login, { email, password });
+        let data = await response.json();
 
         if (!response.ok) {
-            let data = await response.json();
             clearInputs(".login-email", ".login-password");
             showNotification.error(data.message);
             return;
-
         }
 
         let navigatePath = '/';
         addToLocalStorage('isLogged', true);
-
+        addToLocalStorage('userToken', data.token);
+        
         let previousLoc = location.pathname;
         let firstPartOfPath = previousLoc.split('/').filter(res => res != "")[0];
 
