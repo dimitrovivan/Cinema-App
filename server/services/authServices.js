@@ -1,4 +1,6 @@
+const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const { SALT_ROUNDS } = require('../config/security');
 
 function validateRegisterCredentials(email, password, repPassword) {
     
@@ -13,8 +15,11 @@ function validateRegisterCredentials(email, password, repPassword) {
     return true;
 }
 
-function register(email, password) {
-     let user = User({email: email.toLowerCase(), password});
+async function register(email, password) {
+     email = email.toLowerCase();
+     let hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+
+     let user = User({email, password: hashedPassword});
      return user.save();
 }
 
