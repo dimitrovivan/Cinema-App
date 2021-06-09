@@ -1,5 +1,5 @@
 import { showNotification } from "./notifications.js";
-import { addToLocalStorage, handleError, clearInputs, request, redirect } from "./util.js";
+import { addToLocalStorage, clearInputs, request, redirect } from "./util.js";
 
 const origin = 'http://localhost:5000';
 const authResource = '/auth';
@@ -82,14 +82,15 @@ export async function register() {
 
     let registerForm = document.querySelector('.registerForm');
     let { email, password, repPassword } = getInputDataFromForm(registerForm);
-    if (!validateCredentials.register(email, password, repPassword)) return;
 
+    if (!validateCredentials.register(email, password, repPassword)) return;
     try {
-        let response = await request.post(endpoints.register, { email, password });
+        
+        let response = await request.post(endpoints.register, { email, password, repPassword });
         
         if (!response.ok) {
             let data = await response.json();
-            return handleError(data.error.message);
+            return showNotification.error(data.message);
         }
 
         redirect('/login');
@@ -110,9 +111,10 @@ export async function login() {
 
         if (!response.ok) {
             let data = await response.json();
-
             clearInputs(".login-email", ".login-password");
-            return handleError(data.error.message);
+            showNotification.error(data.message);
+            return;
+
         }
 
         let navigatePath = '/';
