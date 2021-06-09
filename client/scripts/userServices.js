@@ -1,9 +1,11 @@
 import { showNotification } from "./notifications.js";
-import { addToLocalStorage, handleError, clearInputs, request, redirect } from "./util.js";
+import { addToLocalStorage, clearInputs, request, redirect } from "./util.js";
 
+const origin = 'http://localhost:5000';
+const authResource = '/auth';
 const endpoints = {
-    register: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`,
-    login: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAmv0aYzWuLU-FGBowxuSLFxUDycT053Rc`
+    register: `${origin}${authResource}/register`,
+    login: `${origin}${authResource}/login`
 }
 
 const validateCredentials = {
@@ -80,14 +82,15 @@ export async function register() {
 
     let registerForm = document.querySelector('.registerForm');
     let { email, password, repPassword } = getInputDataFromForm(registerForm);
+
     if (!validateCredentials.register(email, password, repPassword)) return;
-
     try {
-        let response = await request.post(endpoints.register, { email, password });
-
+        
+        let response = await request.post(endpoints.register, { email, password, repPassword });
+        
         if (!response.ok) {
             let data = await response.json();
-            return handleError(data.error.message);
+            return showNotification.error(data.message);
         }
 
         redirect('/login');
@@ -105,17 +108,18 @@ export async function login() {
     try {
 
         let response = await request.post(endpoints.login, { email, password });
+        let data = await response.json();
 
         if (!response.ok) {
-            let data = await response.json();
-
             clearInputs(".login-email", ".login-password");
-            return handleError(data.error.message);
+            showNotification.error(data.message);
+            return;
         }
 
         let navigatePath = '/';
         addToLocalStorage('isLogged', true);
-
+        addToLocalStorage('userToken', data.token);
+        
         let previousLoc = location.pathname;
         let firstPartOfPath = previousLoc.split('/').filter(res => res != "")[0];
 

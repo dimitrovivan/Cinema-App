@@ -1,6 +1,12 @@
 import { showNotification } from './notifications.js';
 import { request, redirect, toggleBodyOverflowY } from './util.js';
 
+const apiServerDomain = 'http://localhost:5000/';
+const resource = 'movies';
+const endpoints = {
+    allMovies: `${apiServerDomain}${resource}/all`,
+    movieById: `${apiServerDomain}${resource}`,
+}
 export function listenForSeatClickAndChangeState(e) {
 
     let { target } = e;
@@ -29,6 +35,7 @@ export async function payForTickets() {
     let [pathName, movieId, streamHour] = location.pathname.split('/').filter(i => i != "");
     
     let data = await getMovieById(movieId);
+    
     if (data == {}) return;
     let allStreams = data.streams;
     let chosenStream = allStreams[streamHour];
@@ -44,7 +51,7 @@ export async function payForTickets() {
     });
 
     let patchBody = { streams: changedStreams };
-    let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
+    let movieURL = `${endpoints.movieById}/${movieId}`;
     let patchResponse = await request.patch(movieURL, patchBody);
 
     if (!patchResponse.ok) return showNotification.error("Something went wrong... Please try again");
@@ -79,7 +86,7 @@ function validatePayCredentials() {
 export async function getAllMovies() {
 
     try {
-        let response = await request.get('https://cinema-app-7733d-default-rtdb.firebaseio.com/movies.json');
+        let response = await request.get(endpoints.allMovies);
         let moviesData = await response.json();
         return moviesData;
 
@@ -93,8 +100,7 @@ export async function getAllMovies() {
 // return either object with movie data or empty object
 export async function getMovieById(movieId) {
 
-    let movieURL = `https://cinema-app-7733d-default-rtdb.firebaseio.com/movies/${movieId}.json`;
-
+    let movieURL = `${endpoints.movieById}/${movieId}`;
     try {
         let getResponse = await request.get(movieURL);
         let data = await getResponse.json();

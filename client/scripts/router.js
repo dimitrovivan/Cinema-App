@@ -38,7 +38,7 @@ const route = [
     },
 
     {
-        regexPath: /^\/all-movies\/-.*\/[\d]{2}:[\d]{2}$/,
+        regexPath: /^\/all-movies\/.*\/[\d]{2}:[\d]{2}$/,
         execute: async () => {
 
             let isLogged = localStorage.getItem('isLogged');
@@ -72,6 +72,7 @@ const route = [
             if (localStorage.getItem('isLogged')) {
 
                 localStorage.removeItem('isLogged');
+                localStorage.removeItem('userToken');
                 rootRender('home');
                 return showNotification.success("Logged out");
             }
