@@ -72,6 +72,7 @@ const route = [
             if (localStorage.getItem('isLogged')) {
 
                 localStorage.removeItem('isLogged');
+                localStorage.removeItem('userToken');
                 rootRender('home');
                 return showNotification.success("Logged out");
             }
