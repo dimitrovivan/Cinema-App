@@ -86,27 +86,24 @@ const route = [
 
             let moviesData = await getAllMovies();
             if (moviesData == {}) return;
-            let topThreeMovies = {};
-
+          
             // Sort by reserved seats, slice the first 3 and push information for them in moviesData
 
-            Object.keys(moviesData).sort((a, b) => {
+            let topThreeMovies = moviesData.sort((firstMovie, secondMovie) => {
 
                 let aReservedSeats = 0;
                 let bReservedSeats = 0;
-
+                
                 Object
-                    .values(moviesData[a].streams)
+                    .values(firstMovie.streams)
                     .forEach(streamSeats => { aReservedSeats += streamSeats.reduce((acc, x) => x == "reserved" ? acc += 1 : acc, 0) })
 
                 Object
-                    .values(moviesData[b].streams)
+                    .values(secondMovie.streams)
                     .forEach(streamSeats => { bReservedSeats += streamSeats.reduce((acc, x) => x == "reserved" ? acc += 1 : acc, 0) })
 
                 return bReservedSeats - aReservedSeats;
-
-            }).slice(0, 3)
-                .forEach(movieId => { topThreeMovies[movieId] = moviesData[movieId] })
+            }).slice(0, 3);
 
             return rootRender('topMovies', { topThreeMovies });
         }
