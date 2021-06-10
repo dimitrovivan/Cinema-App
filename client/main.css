@@ -472,7 +472,7 @@ input {
   transition: -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
-  background-color: #413e3e;
+  background: transparent;
   width: 30%;
   padding: 20px;
   border-radius: 5px;
@@ -481,6 +481,8 @@ input {
   font-weight: 500;
   text-align: center;
   letter-spacing: 1px;
+  -webkit-box-shadow: inset 0px 0px 20px 5px black, 0px 0px 20px 0px rgba(255, 255, 255, 0.4);
+          box-shadow: inset 0px 0px 20px 5px black, 0px 0px 20px 0px rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 599px) {
@@ -509,18 +511,20 @@ input {
 
 .notification-container.error {
   color: #ff2e2e;
+  border: 1px solid #ff2e2e;
 }
 
 .notification-container.error::before {
-  background-color: #ff2e2e;
+  border: 1px solid #ff2e2e;
 }
 
 .notification-container.success {
   color: #2dfa5a;
+  border: 1px solid #2dfa5a;
 }
 
 .notification-container.success::before {
-  background-color: #2dfa5a;
+  border: 1px solid #2dfa5a;
 }
 
 .root {
