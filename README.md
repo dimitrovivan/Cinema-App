@@ -27,8 +27,7 @@ The design is made and implemented by me. It's responsive and dekstop-first.
    3. If your entry point is with wrong url, you are redirected to home page.
 
   ####  Disdisadvantages:
-   1. If you try to login when i have turned of Firebase authentication you will receive error "Failed to fetch", due to security reasons in Firebase. And after the second time    you try, or 1-3s it will be turned on automatically and you will be able to log in. It is same for register.
-
+   1. Database is not deployed
  
 ## How to set up:
 1. Open terminal in client and server folder and type npm install
